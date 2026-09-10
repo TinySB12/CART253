@@ -1,1 +1,2 @@
-This took way too much effot sad
+# This is my page!
+![alt text](Banner.jpg)
