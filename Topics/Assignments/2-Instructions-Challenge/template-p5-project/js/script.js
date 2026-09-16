@@ -1,9 +1,9 @@
 /**
- * Title of Project
- * Author Name
+ * Class Two
+ * Saba
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * Hi! I have no clue what I'm doing yet! :D
+ * Please don't judge me too harshly, I'm still learning!
  */
 
 "use strict";
