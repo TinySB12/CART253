@@ -13,6 +13,12 @@
 */
 function setup() {
 
+
+    //Making my canvas 700px wide and 500px tall
+    createCanvas(700, 500);
+    background(50, 100, 195);
+    rect(300, 150, 100, 200, 15);
+
 }
 
 
