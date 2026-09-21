@@ -1,9 +1,9 @@
 /**
- * Title of Project
- * Author Name
+ * "One Is Watching"
+ * Saba
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * I've been wanting to make one from TPOT just standing there and staring at you and your cursor.
+ * Here's hoping this won't be too complicated! (Famous last words)
  */
 
 "use strict";
@@ -12,6 +12,8 @@
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
 function setup() {
+    createCanvas(1000, 600);
+    
 
 }
 
@@ -20,5 +22,6 @@ function setup() {
  * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
 */
 function draw() {
+    background(197, 217, 222);
 
 }
