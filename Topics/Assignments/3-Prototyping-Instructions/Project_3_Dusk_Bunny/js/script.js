@@ -45,7 +45,14 @@ function draw() {
   //The ground
   fill(12, 0, 20)
   arc(500, 600, 1400, 300, PI, 0)
+
+  //The bunny
   drawBunny(300, 430)
+
+  //The clouds
+  drawBiggerCloud(150, 180)
+  drawBiggerCloud(500, 120)
+  drawCloud(800, 210)
    
 
 
@@ -64,5 +71,22 @@ function drawBunny(x, y) {
     ellipse(x + 130, y - 100, 40, 100)
     ellipse(x + 160, y - 100, 40, 100)
 
+
+}
+
+//Cloud from my previous project
+function drawBiggerCloud(x, y) {
+    fill(12, 0, 20);
+    noStroke();
+    arc(x, y, 100, 100, PI, 0);
+    arc(x + 75, y, 150, 150, PI, 0);
+    arc(x + 150, y, 75, 75, PI, 0);
+    arc(x + 230, y, 50, 50, PI, 0);
+}
+function drawCloud(x, y) {
+    fill(12, 0, 20);
+    noStroke();
+    arc(x, y, 100, 100, PI, 0);
+    arc(x + 50, y, 50, 50, PI, 0);
 
 }
