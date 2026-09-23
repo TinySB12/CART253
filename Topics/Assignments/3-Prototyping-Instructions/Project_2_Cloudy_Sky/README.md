@@ -6,15 +6,13 @@ Saba
 
 ## Description
 
-The point of this project is for me to attempt using the draw function that was taught last week as I haven't yet.
+The point of this project is for me to attempt using the draw function that was taught last week as I haven't yet used them in any project.
 
 ## Attribution
 
 This bit should attribute any code, assets or other elements used taken from other sources. For example:
 
 > - This project uses [p5.js](https://p5js.org).
-> - The clown image is a capture of the clown from the Apple emoji character set.
-> - The barking sound effect is "single dog bark 1" by crazymonke9 from freesound.org: https://freesound.org/people/crazymonke9/sounds/418107/
 
 ## License
 
