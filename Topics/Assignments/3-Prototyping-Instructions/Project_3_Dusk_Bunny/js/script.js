@@ -61,7 +61,7 @@ function draw() {
 function drawBunny(x, y) {
 
   //The body
-  fill(12, 0, 20)
+    fill(12, 0, 20)
     ellipse(x + 100, y, 200, 160)
     //tail
     circle(x, y, 80)
