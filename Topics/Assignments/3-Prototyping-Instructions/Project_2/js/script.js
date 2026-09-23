@@ -67,3 +67,4 @@ function drawBird(x, y, size) {
     arc(x, y, 50, 20, PI + QUARTER_PI, PI + 4 * QUARTER_PI);
     arc(x + 50, y, 50, 20, PI, PI + 3 * QUARTER_PI);
 }
+//I really want to learn how to make the clouds move across the screen, but for now I like this.
