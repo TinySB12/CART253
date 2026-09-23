@@ -1,23 +1,25 @@
 /**
- * Title of Project
- * Author Name
+ * Cloudy Sky
+ * Saba
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * A sky full of clouds! Maybe I'll see if I can make them slowly move across the screen.
+ * My main goal is to practice using the draw functon with this project.
  */
 
 "use strict";
 
 /**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
+ * I'm gonna try a smaller canvas for this one.
 */
 function setup() {
+    createCanvas(700, 500);
+    background(135, 188, 235);
 
 }
 
 
 /**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
+ * Clouds go brrr
 */
 function draw() {
 
