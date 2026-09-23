@@ -1,23 +1,24 @@
 /**
- * Title of Project
- * Author Name
+ * Dusk Bunny
+ * Saba
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * My main goal with this project is to learn how to do Color Interlopation! I will also attempt to use a previous draw function
+ * from my previous project (Cloudy Sky) to add more background elements.
  */
 
 "use strict";
 
 /**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
+ * Dusk Sky go brrrr!
 */
 function setup() {
     createCanvas(1000, 600);
     colorMode(RGB);
     noStroke();
 
- //I'm going to ask what Describe does later. I'm making this setup based on a reference from the p5.js website.
-
+ /**I'm going to ask what Describe does later. I'm making this setup based on a reference from the p5.js website, except unlike
+ * The website, I'll be using RBG color mode cause I'm curious if it'll work with different color modes.
+ */
  let colorA = color(30, 0, 51);
 
  let colorB = color(207, 76, 100);
