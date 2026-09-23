@@ -9,17 +9,19 @@
 "use strict";
 
 /**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
+ * I don't have a detailed background in mind for this.
 */
 function setup() {
-    createCanvas(1000, 600);
+    createCanvas(900, 600);
     
 
 }
 
 
 /**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
+ * I've attempted to draw One from TPOT.
+ * and I wanted to have her eyes follow the cursor because she loves watching people in the show she's from.
+ * I also really wanted to try the eye following the cursor function.
 */
 function draw() {
     background(197, 217, 222);
