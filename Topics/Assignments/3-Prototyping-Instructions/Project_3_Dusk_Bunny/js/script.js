@@ -42,8 +42,27 @@ function setup() {
 */
 function draw() {
 
-    fill(12, 0, 20)
-    ellipse(400, 600, 200, 160)
+  //The ground
+  fill(12, 0, 20)
+  arc(500, 600, 1400, 300, PI, 0)
+  drawBunny(300, 430)
+   
+
+
+}
+
+function drawBunny(x, y) {
+
+  //The body
+  fill(12, 0, 20)
+    ellipse(x + 100, y, 200, 160)
+    //tail
+    circle(x, y, 80)
+    //head
+    ellipse(x + 150, y - 50, 110, 100)
+    //The ears
+    ellipse(x + 130, y - 100, 40, 100)
+    ellipse(x + 160, y - 100, 40, 100)
 
 
 }
