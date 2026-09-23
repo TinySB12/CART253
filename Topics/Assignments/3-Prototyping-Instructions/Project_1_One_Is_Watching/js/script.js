@@ -59,6 +59,15 @@ function draw() {
 
     noFill();
     arc(450, 400, 90, 130, 0, PI);
+
+    //irises
+    let irisX = map(mouseX, 0, width, 360, 540);
+    let irisY = map(mouseY, 0, height, 280, 320);
+    
+    
+    fill(0, 0, 0);
+    circle(irisX, irisY, 30);
+    circle(irisX + 140, irisY, 30);
     
      
     
