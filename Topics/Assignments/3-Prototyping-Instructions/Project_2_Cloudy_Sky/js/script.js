@@ -25,22 +25,22 @@ function setup() {
 */
 function draw() {
 
-    drawCloud(100, 100, 50);
-    drawCloud(400, 150, 50);
-    drawBiggerCloud(600, 200, 100);
-    drawCloud(200, 300, 50);
-    drawBiggerCloud(400, 400, 100);
-    drawBiggerCloud(60, 430, 100);
-    drawCloud(500, 60, 50);
-    drawBiggerCloud(5, 225, 100);
-    drawBird(300, 100, 50);
-    drawBird(500, 300, 50);
-    drawBird(120, 280, 50);
+    drawCloud(100, 100);
+    drawCloud(400, 150);
+    drawBiggerCloud(600, 200);
+    drawCloud(200, 300);
+    drawBiggerCloud(400, 400);
+    drawBiggerCloud(60, 430);
+    drawCloud(500, 60);
+    drawBiggerCloud(5, 225);
+    drawBird(300, 100);
+    drawBird(500, 300);
+    drawBird(120, 280);
 
 }
 
 //my different draw functions for this project!
-function drawCloud(x, y, size) {
+function drawCloud(x, y) {
     fill(255);
     noStroke();
     arc(x, y, 100, 100, PI, 0);
@@ -48,7 +48,7 @@ function drawCloud(x, y, size) {
 
 }
 
-function drawBiggerCloud(x, y, size) {
+function drawBiggerCloud(x, y) {
     fill(255);
     noStroke();
     arc(x, y, 100, 100, PI, 0);
