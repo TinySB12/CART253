@@ -42,4 +42,8 @@ function setup() {
 */
 function draw() {
 
+    fill(12, 0, 20)
+    ellipse(400, 600, 200, 160)
+
+
 }
