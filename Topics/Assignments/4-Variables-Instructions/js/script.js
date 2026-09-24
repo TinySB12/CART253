@@ -57,12 +57,16 @@ function draw() {
 
   //Draw a bird
   drawBird(Bird.X,Bird.Y);
-  
+
   //Make mrFurious slowly turn red
   mrFurious.fill.g = mrFurious.fill.g -1
   mrFurious.fill.b = mrFurious.fill.b -1
   mrFurious.fill.g = constrain(mrFurious.fill.g,50,255)
-  console.log(mrFurious.fill.g)
+
+  //Make mrFurious shake
+  mrFurious.x = mrFurious.x +random(-5,5);
+  mrFurious.x = constrain(mrFurious.x,200-5,200+5);
+  console.log(mrFurious.x)
 
   //Change Sky color to Night
   Sky.r = Sky.r -1
