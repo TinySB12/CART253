@@ -34,6 +34,9 @@ let Bird = {
 
 };
 
+//Rage Value
+let rage = 1
+
 /**
  * Create the canvas
  */
@@ -63,10 +66,13 @@ function draw() {
   mrFurious.fill.b = mrFurious.fill.b -1
   mrFurious.fill.g = constrain(mrFurious.fill.g,50,255)
 
-  //Make mrFurious shake
-  mrFurious.x = mrFurious.x +random(-5,5);
-  mrFurious.x = constrain(mrFurious.x,200-5,200+5);
+  //Make mrFurious shake in the center
+  mrFurious.x = mrFurious.x +random(-rage,rage);
+  mrFurious.x = constrain(mrFurious.x,200-10,200+10);
   console.log(mrFurious.x)
+
+  //Make mrFurious shake more over time
+  rage = rage +0.05
 
   //Change Sky color to Night
   Sky.r = Sky.r -1
