@@ -60,7 +60,7 @@ function drawBiggerCloud(x, y) {
 /* Took me some time to figure out how to use the arc function to make the bird. It still took more trial and error than I would
 have liked, though!
 */
-function drawBird(x, y, size) {
+function drawBird(x, y) {
     noFill();
     stroke(0);
     strokeWeight(2);
