@@ -1,15 +1,14 @@
 /**
- * Title of Project
- * Author Name
+ * Orbit
+ * Saba
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * My goal with this project is to make multiple shapes orbit around my mouse!
+ * I'm going to try starting more simply this time compared to last time.
  */
 
 "use strict";
 
 /**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
 function setup() {
 
