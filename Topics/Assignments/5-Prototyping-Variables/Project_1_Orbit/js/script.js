@@ -36,12 +36,17 @@ function setup() {
 
 
 /**
- * 
+ * Draw a dark blue background to simply a vague "Space"
 */
 function draw() {
-    background(0,150,150);
+    background(10,15,155);
 
-    // Calculate the orb's position from cursor
+    //Draw center orb that follows the mouse
+    fill(255,255,0)
+    noStroke();
+    ellipse(mouseX,mouseY,50,50)
+
+    // Calculate Orb1's position from cursor
     push();
     let x = mouseX + (Orb1.distance) * cos(Orb1.angle);
     let y = mouseY + (Orb1.distance) * sin(Orb1.angle);
