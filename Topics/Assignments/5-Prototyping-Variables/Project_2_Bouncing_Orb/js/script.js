@@ -39,6 +39,7 @@ function draw() {
     background(150,150,150)
 
     // Draw the orb
+    // Had to multiply my radius by 2 because the orb was bouncing way too early off the edges.
     fill(0,200,250);
     noStroke();
     ellipse(Orb.x, Orb.y, Orb.radius *2, Orb.radius*2);
@@ -50,8 +51,8 @@ function draw() {
     // time for conditions!
     // Make orb bounce from the edges of the canvas
     // Also learned what >= means through my search: it means "greater than or equal to". It's a better safety net.
-    // || means "OR", and I need to use it so I can make sure the orb bounces off both edges, not just one side
-    // I'm multiplying the orb speeds by -1 to reverse the direction
+    // || means "OR", and I need to use it so I can make sure the orb bounces off both edges, not just one side.
+    // I'm multiplying the orb speeds by -1 to reverse the direction.
     if (Orb.x + Orb.radius >= width || Orb.x - Orb.radius <= 0) {Orb.xspeed = Orb.xspeed * -1}
     if (Orb.y + Orb.radius >= height || Orb.y - Orb.radius <= 0) {Orb.yspeed = Orb.yspeed * -1}
 
