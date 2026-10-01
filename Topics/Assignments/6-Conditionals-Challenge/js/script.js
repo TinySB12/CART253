@@ -2,8 +2,7 @@
  * Circle Master
  * Saba
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * Pushing puck into target! Yippeeee!
  */
 
 "use strict";
@@ -123,6 +122,7 @@ function movePuck() {
   }
 }
 
+// Display the target
 function drawTarget(){
     ellipse(target.x, target.y, target.size, target.size);
     noStroke();
