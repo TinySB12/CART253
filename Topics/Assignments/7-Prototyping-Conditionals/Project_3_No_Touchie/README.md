@@ -2,7 +2,7 @@
 
 Saba
 
-[View this project online](URL_FOR_THE_RUNNING_PROJECT)
+[View this project online](https://tinysb12.github.io/CART253/Topics/Assignments/7-Prototyping-Conditionals/Project_3_No_Touchie/)
 
 ## Description
 
