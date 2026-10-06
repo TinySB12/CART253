@@ -14,8 +14,8 @@ let x = 200;
 let y = 200;
 
 //Circle2
-let x2 = 100;
-let y2 = 150;
+let x2 = 90;
+let y2 = 145;
 
 //Circle3
 let x3 = 300;
@@ -40,18 +40,17 @@ function setup() {
 
 
 /**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
+ * Different colored circles get smaller when the mouse is closer to them. 
 */
 function draw() {
 
     //draw the background and remove the stroke from the circles
-    background(220, 220, 220);
+    background(50, 50, 150);
     noStroke();
-
 
     //calculate the distance between the mouse and Circle1
     let distance = dist(mouseX, mouseY, x, y);
-
+    fill(3, 186, 252);
     //draw Circle1 and make it smaller the closer the mouse is to it
     if (distance < 150) {
         let size = distance / 2;
@@ -62,6 +61,7 @@ function draw() {
 
     //calculate the distance between the mouse and Circle2
     let distance2 = dist(mouseX, mouseY, x2, y2);
+    fill(197, 58, 232);
     //draw Circle2 and make it smaller the closer the mouse is to it
     if (distance2 < 150) {
         let size2 = distance2 / 2;
@@ -72,6 +72,7 @@ function draw() {
 
     //calculate the distance between the mouse and Circle3
     let distance3 = dist(mouseX, mouseY, x3, y3);
+    fill(252, 219, 50);
 
     //draw Circle3 and make it smaller the closer the mouse is to it
     if (distance3 < 150) {
@@ -83,6 +84,7 @@ function draw() {
 
     //calculate the distance between the mouse and Circle4
     let distance4 = dist(mouseX, mouseY, x4, y4);
+    fill(50, 252, 104);
 
     //draw Circle4 and make it smaller the closer the mouse is to it
     if (distance4 < 150) {
@@ -94,7 +96,7 @@ function draw() {
 
     //calculate the distance between the mouse and Circle5
     let distance5 = dist(mouseX, mouseY, x5, y5);
-
+    fill(255, 94, 77);
     //draw Circle5 and make it smaller the closer the mouse is to it
     if (distance5 < 150) {
         let size5 = distance5 / 2;
@@ -105,6 +107,7 @@ function draw() {
 
     //calculate the distance between the mouse and Circle6
     let distance6 = dist(mouseX, mouseY, x6, y6);
+    fill(255, 130, 46);
 
     //draw Circle6 and make it smaller the closer the mouse is to it
     if (distance6 < 150) {
