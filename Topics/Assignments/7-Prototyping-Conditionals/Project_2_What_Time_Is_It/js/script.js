@@ -16,6 +16,10 @@ let SkyColor = {
     night2: "#3939dd"
 };
 
+//doing this so that the mouseX value is constrained to the canvas size.
+//otherwise the sky was turning white...
+let x = constrain(mouseX, 0, 500);
+
 
 function setup() {
     createCanvas(500, 400);
@@ -27,12 +31,14 @@ function setup() {
 */
 function draw() {
 
+    let x = constrain(mouseX, 0, 500);
+
     //Make it so that the sky changes color based on the mouse position!
-    if (mouseX < 250) {
+    if (x < 250) {
         //Daytime
         push();
         //Make the day color slowly transition into the night color with mouse movement!
-        background(lerpColor(color(SkyColor.day), color(SkyColor.day2), mouseX / 250));
+        background(lerpColor(color(SkyColor.day), color(SkyColor.day2), x / 250));
         noStroke();
         //Draw sun
         fill(255, 255, 0);
@@ -42,7 +48,7 @@ function draw() {
         //Nighttime
         push();
         //Make the night color slowly transition into the day color with mouse movement!
-        background(lerpColor(color(SkyColor.night), color(SkyColor.night2), (mouseX - 250) / 250));
+        background(lerpColor(color(SkyColor.night), color(SkyColor.night2), (x - 250) / 250));
         noStroke();
         //Draw moon
         fill(255, 255, 255);
