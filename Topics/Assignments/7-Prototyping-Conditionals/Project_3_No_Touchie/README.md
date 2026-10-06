@@ -1,4 +1,4 @@
-# What Time Is It?
+# No Touchie
 
 Saba
 
@@ -6,7 +6,7 @@ Saba
 
 ## Description
 
-The sky changes color based on the mouse position!
+Touch the orbs if you can! (Spoilers, you can't. Hopefully.)
 
 ## Attribution
 
