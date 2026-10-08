@@ -67,6 +67,10 @@ function lose() {
   gameOver = true;
 }
 
+function keydown() {
+  lose();
+}
+
 function keyPressed() {
   lose();
 }
