@@ -1,42 +1,70 @@
-/**
- * Spin The Rabbit
- * Saba
- * 
- * Press the arrow keys to take the rabbit for a SPEEEEEEEEN!!!
- */
-
-"use strict";
-
-//Variables for the rabbit image and the angle of rotation
 let angle = 0;
-let rabbit;
+let spinLeft = false;
+let spinRight = false;
 
 function setup() {
     createCanvas(600, 600);
 }
 
-
-/**
- * Spin the rabbit with the arrow keys!
-*/
 function draw() {
     background(230);
-    image(rabbit, 100, 100, 100, 100);
-    rotate(angle);
 
-}
-
-//load the rabbit image
-function preload() {
-    rabbit = loadImage('assets/rabbit.png'); 
-}
-
-//Spin left or right with the arrow keys
-function keyPressed() {
-    console.log(keyCode);
-    if (keyCode === 37) {
-        angle -= 0.1;
-    } else if (keyCode === 39) {
-        angle += 0.1;
+    // Spin continuously while the key is held
+    if (spinLeft) {
+        angle -= 0.5;
     }
+
+    if (spinRight) {
+        angle += 0.5;
+    }
+
+    push();
+    translate(width / 2, height / 2);
+    rotate(angle);
+    drawRabbit();
+    pop();
+}
+
+function keyPressed() {
+    if (keyCode === 37) {
+        spinLeft = true;
+    }
+
+    if (keyCode === 39) {
+        spinRight = true;
+    }
+}
+
+function keyReleased() {
+    if (keyCode === 37) {
+        spinLeft = false;
+    }
+
+    if (keyCode === 39) {
+        spinRight = false;
+    }
+}
+
+function drawRabbit() {
+    // Body
+    fill(255);
+    noStroke();
+    arc(-70, 40, 180, 200, PI, TWO_PI);
+
+    // Head
+    ellipse(0, -35, 90, 85);
+
+    // Left ear
+    ellipse(-25, -100, 22, 75);
+
+    // Right ear
+    ellipse(10, -105, 22, 75);
+
+    // Black eye
+    fill(0);
+    ellipse(20, -40, 20, 20);
+
+    // Tail
+    fill(255);
+    ellipse(-150, 0, 55, 55);
 }
