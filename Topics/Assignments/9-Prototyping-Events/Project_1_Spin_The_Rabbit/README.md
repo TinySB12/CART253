@@ -2,7 +2,7 @@
 
 Saba
 
-[View this project online](URL_FOR_THE_RUNNING_PROJECT)
+[View this project online](https://tinysb12.github.io/CART253/Topics/Assignments/9-Prototyping-Events/Project_1_Spin_The_Rabbit/)
 
 ## Description
 
