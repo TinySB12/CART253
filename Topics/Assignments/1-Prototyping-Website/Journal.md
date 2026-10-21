@@ -34,9 +34,14 @@ I kind of want to try and code something more challenging rather than code 3 sep
 
 My favorite one out of the three prototypes I made for this one is "No Touchie" because it feels very stimmy :>
 
+## 21/10/2026
+Topic of this entry: My prototypes - Events
+
+This assignment gave us 2 weeks to work with. I was quite fond of the amount of time I had to think and process my different ideas for this one, especially considering how much more in depth you can go with coding events. This allowed me enough time to plan and code a functionable enough prototype of a game, using everything I have learned and used in my previous prototypes, as evident by Project_2_Eat_To_Grow_Bigger. I find myself craving one final assignment to work on where I can allow myself more time to polish and add to a simple game prototype without having to remind myself that this assignment isn't asking me for anything complicated.
+
+I think so far I have had the most fun with this assignment! I also was weirdly the most comfortable with it. I'm finally starting to find my own style of coding, and I've noticed that I have a big habit of giving every single feature its own function before I call them in function draw(), which usually works but sometimes it doesn't and I'm still learning why and why.
+
+I'm excited for the next prototype assignment! And hopeful for an extended time limit to finish it.
+
 ## XX/10/2026
-TBA
-
-
-
 
