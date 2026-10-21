@@ -5,7 +5,6 @@
  * Move the orb around to food that is spawning to make it bigger. Avoid eating the poisonous food!
  */
 
-"use strict";
 
 // Variable for score
 let score = 0;
@@ -40,9 +39,9 @@ let poisonVisible = false;
 
 function setup() {
     createCanvas(800,800);
+
     // Start game with food already spawned
     spawnFood();
-
     // Check to spawn poison every 10 seconds
     setInterval(spawnPoison, 10000);
     
@@ -51,11 +50,15 @@ function setup() {
 
 // Draw the game
 function draw() {
-    background(200);
+    background(0);
 
+    // Draw function to spawn player
     spawnPlayer();
+    // Draw function to move player
     movePlayer();
+    // Draw function to eat food
     eatFood();
+    // Draw function to eat poison food
     eatPoison();
     
     
@@ -78,10 +81,17 @@ function draw() {
     // Draw score appearing on top of the screen
     push();
     textAlign(CENTER);
-    fill(0);
+    fill(255);
     textSize(15);
     text("Score:", width/2, 100);
     text(score, width/2 * 1.1, 100);
+    pop();
+
+    push();
+    textAlign(CENTER);
+    textSize(15);
+    text("Use the Arrow Keys to move! Get to score 50 to win the game!", width/2, 120);
+    text("Careful not to eat the poison food!", width/2, 140);
     pop();
 
     // Draw the win condition and stop game when player wins
@@ -89,7 +99,7 @@ function draw() {
         push();
         textAlign(CENTER);
         textWeight(800);
-        fill(0);
+        fill(255);
         textSize(60);
         text("YOU WIN!", width/2, height/2);
         pop();
