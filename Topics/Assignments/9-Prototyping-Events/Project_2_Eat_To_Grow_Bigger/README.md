@@ -2,7 +2,7 @@
 
 Saba
 
-[View this project online](https://tinysb12.github.io/CART253/Topics/Assignments/9-Prototyping-Events/2-Project_Eat_To_Grow_Bigger/)
+[View this project online](https://tinysb12.github.io/CART253/Topics/Assignments/9-Prototyping-Events/Project_2_Eat_To_Grow_Bigger/)
 
 ## Description
 
