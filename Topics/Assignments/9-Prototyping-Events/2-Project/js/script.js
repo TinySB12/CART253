@@ -7,9 +7,13 @@
 
 "use strict";
 
+// Variable for score
 let score = 0;
-let lose = false;
 
+// Variable for win condition
+let win = false;
+
+// Variables for player stats
 let player = {
     xspeed: 0,
     yspeed: 0,
@@ -18,29 +22,37 @@ let player = {
     y: 400,
 }
 
+// Variables for food
 let food = {
     size: 25,
     x: 0,
     y: 0,
 }
 
+// Variables for poison food
 let poison = {
     size: 25,
     x: 0,
     y: 0,
 }
+// Variable for when poison will appear
+let poisonVisible = false;
 
 function setup() {
-    console.log(spawnFood)
     createCanvas(800,800);
+    // Start game with food already spawned
     spawnFood();
-    setInterval(spawnPoison, 3000);
+
+    // Check to spawn poison every 10 seconds
+    setInterval(spawnPoison, 10000);
+    
 
 }
 
+// Draw the game
 function draw() {
     background(200);
-    upScore();
+
     spawnPlayer();
     movePlayer();
     eatFood();
@@ -54,15 +66,40 @@ function draw() {
     ellipse(food.x, food.y, food.size, food.size);
     pop();
 
+    // Draw Poison Food
+    if (poisonVisible) {
     push();
     noStroke();
-    fill(100,255,100);
+    fill(100, 255, 100);
     ellipse(poison.x, poison.y, poison.size, poison.size);
     pop();
+    }
 
+    // Draw score appearing on top of the screen
+    push();
+    textAlign(CENTER);
+    fill(0);
+    textSize(15);
+    text("Score:", width/2, 100);
+    text(score, width/2 * 1.1, 100);
+    pop();
+
+    // Draw the win condition and stop game when player wins
+    if (win === true) {
+        push();
+        textAlign(CENTER);
+        textWeight(800);
+        fill(0);
+        textSize(60);
+        text("YOU WIN!", width/2, height/2);
+        pop();
+
+        noLoop();
+    }
 
 }
 
+// Function to spawn player
 function spawnPlayer() {
     noStroke();
     fill(0, 0, 255);
@@ -70,26 +107,31 @@ function spawnPlayer() {
 
 }
 
+// Function for moving the player
 function movePlayer() {
     player.x += player.xspeed;
     player.y += player.yspeed;
 
 }
 
+// Function for spawning the food
 function spawnFood() {
     food.x = random(100, 700);
     food.y = random(100, 700);
     
 }
 
+// Function for spawning the poison food and when it begins to spawn
 function spawnPoison() {
-    if (score >= 15) {
-    poison.x = random(100, 700);
-    poison.y = random(100, 700);
-    }
+   if (score >= 15) {
+   poison.x = random(100, 700);
+   poison.y = random(100, 700);
+   poisonVisible = true;
+   }
     
 }
 
+// Function for eating the food
 function eatFood() {
     let d = dist(player.x, player.y, food.x, food.y);
     if (d < (player.size / 2) + (food.size / 2)) {
@@ -97,32 +139,38 @@ function eatFood() {
     spawnFood();
     score += 1;
   }
+
+  //Win condition
+  if (score === 50) {
+        win = true;
+    }
     
 }
 
+// Function for eating the poison food
 function eatPoison() {
+    if (poisonVisible) {
     let d = dist(player.x, player.y, poison.x, poison.y);
-    if (d < (player.size / 2) + (food.size / 2)) {
+
+    if (d < (player.size / 2) + (poison.size / 2)) {
     player.size -= 20;
     score -= 5;
+    poisonVisible = false;
+    }
+    }
   }
-    
-}
 
-function upScore() {
-    textAlign(CENTER);
-    text("Score:", width/2, 100);
-    text(score, width/2 * 1.1, 100);
 
-}
+// Function to move player
 function keyPressed() {
-    console.log(keyCode);
+    // Code to move player left or right
     if (keyCode === 39) {
         player.xspeed += 3;
     } else if (keyCode === 37) {
         player.xspeed -= 3;
     }
 
+    // Code to move player up or down
     if (keyCode === 40) {
         player.yspeed += 3;
     } else if (keyCode === 38) {
@@ -132,6 +180,7 @@ function keyPressed() {
 
 }
 
+// Function to stop player movement when keys are released
 function keyReleased() {
     player.xspeed = 0;
     player.yspeed = 0;
