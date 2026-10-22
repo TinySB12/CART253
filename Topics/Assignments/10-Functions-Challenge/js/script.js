@@ -16,7 +16,19 @@ const ball = {
     height: 10,
     velocity: {
         x: 0,
-        y: 10
+        y: 5
+    }
+};
+
+// Our Second ball
+const ball2 = {
+    x: 300,
+    y: 20,
+    width: 10,
+    height: 10,
+    velocity: {
+        x: 0,
+        y: 7
     }
 };
 
@@ -44,11 +56,14 @@ function draw() {
 
     movePaddle(paddle);
     moveBall(ball);
+    moveBall(ball2);
 
     handleBounce(ball, paddle);
+    handleBounce(ball2, paddle);
 
     drawPaddle(paddle);
     drawBall(ball);
+    drawBall(ball2);
 }
 
 /**
@@ -72,8 +87,8 @@ function moveBall(ball) {
  */
 function handleBounce(ball, paddle) {
 
-    if (checkOverlap === true){
-        ball.velocity.y * -1;
+    if (checkOverlap(ball, paddle) === true){
+        ball.velocity.y *= -1;
     }
 
 }
