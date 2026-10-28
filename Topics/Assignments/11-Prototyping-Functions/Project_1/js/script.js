@@ -41,3 +41,10 @@ function calculateStroke(W,H) {
     return stroke;
 
 }
+
+function drawSquare(){
+    push();
+    fill(0,200,200);
+    rect(100,100, 50,50);
+    pop();
+}
