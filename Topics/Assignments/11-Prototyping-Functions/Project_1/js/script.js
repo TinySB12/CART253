@@ -16,23 +16,25 @@ function setup() {
 }
 
 function draw() {
-
-    drawOrb(80, 80);
+    drawOrb(300, 300, 50);
+    drawOrb(200, 200, 100);
+    drawOrb(80, 80, 200);
+    
 
 }
 
-function drawOrb(W,H) {
+function drawOrb(W,H,Shade) {
 
     let stroke = calculateStroke(W,H);
 
-    fill(200);
+    fill(Shade);
     strokeWeight(stroke)
     ellipse(width/2, height/2, W, H);
 }
 
 function calculateStroke(W,H) {
-    const minStroke = 1;
-    const maxStroke = 20;
+    const minStroke = 10;
+    const maxStroke = 40;
     let d = dist(mouseX,mouseY, W, H);
     let stroke = map(d, 0, width, maxStroke, minStroke);
 
