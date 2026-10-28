@@ -12,26 +12,30 @@
 */
 function setup() {
     createCanvas(500, 500);
-    drawOrb(30, 30);
 
 }
 
-
-/**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
-*/
 function draw() {
+
+    drawOrb(80, 80);
 
 }
 
 function drawOrb(W,H) {
 
+    let stroke = calculateStroke(W,H);
+
+    fill(200);
+    strokeWeight(stroke)
+    ellipse(width/2, height/2, W, H);
+}
+
+function calculateStroke(W,H) {
     const minStroke = 1;
     const maxStroke = 20;
     let d = dist(mouseX,mouseY, W, H);
     let stroke = map(d, 0, width, maxStroke, minStroke);
 
-    fill(200);
-    strokeWeight(stroke)
-    ellipse(width/2, height/2, W, H);
+    return stroke;
+
 }
