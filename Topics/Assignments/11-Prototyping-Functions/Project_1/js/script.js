@@ -8,8 +8,7 @@
 "use strict";
 
 let Orb = {
-    hue: 0,
-    shade: 0,
+    color: null,
     size: 80,
 }
 
@@ -25,13 +24,15 @@ function draw() {
     drawOrb(80, 80, 200);
 }
 
-function drawOrb(W,H,Shade) {
+function drawOrb(W,H,Color) {
 
     let stroke = calculateStroke(W,H);
 
-    fill(Shade);
+    fill(0, Color, Color);
     strokeWeight(stroke)
     ellipse(width/2, height/2, W, H);
+
+    
 }
 
 function calculateStroke(W,H) {
@@ -51,3 +52,7 @@ function drawSquare(){
     pop();
 }
 
+function mousePressed(){
+    Orb.color = random(0,255);
+
+}
