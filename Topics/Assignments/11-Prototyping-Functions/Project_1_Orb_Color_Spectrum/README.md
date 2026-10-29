@@ -1,12 +1,12 @@
-# TITLE OF PROJECT
+# Orb Color Spectrum
 
-AUTHOR NAME
+Saba
 
 [View this project online](URL_FOR_THE_RUNNING_PROJECT)
 
 ## Description
 
-This description should help the reader understand what the program is, anything they should know to be able to experience it (controls, special features, etc.), and what the desired user experience is. For example:
+This one mainly started as a dabble to let me try to figure out how to use parameters, and specifically the return function. I added more flavor to is as time went, but it is still relatively simple.
 
 ## Attribution
 
