@@ -20,10 +20,16 @@ function setup() {
 }
 
 function draw() {
+    background(50);
     drawOrb(400, 400, Orb.colorR+30,Orb.colorG+30,Orb.colorB+30);
     drawOrb(300, 300, Orb.colorR+50,Orb.colorG+50,Orb.colorB+50);
     drawOrb(200, 200, Orb.colorR+100,Orb.colorG+100,Orb.colorB+100);
     drawOrb(80, 80, Orb.colorR+200,Orb.colorG+200,Orb.colorB+200);
+
+    textAlign(LEFT);
+    fill(255);
+    textSize(13);
+    text("Click with your mouse :)",30,30,100,60);
 }
 
 function drawOrb(W,H, ColorR, ColorG, ColorB) {
