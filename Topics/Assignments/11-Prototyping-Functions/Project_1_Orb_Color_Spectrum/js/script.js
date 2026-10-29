@@ -8,7 +8,7 @@
 "use strict";
 
 
-// variable for Orb
+// Variable for Orb
 let Orb = {
     colorR: null,
     colorG: null,
@@ -40,7 +40,7 @@ function draw() {
 // Function for drawing orbs
 function drawOrb(W,H, ColorR, ColorG, ColorB) {
 
-    // passes the value from calculate stroke to stroke
+    // Passes the value from calculate stroke to stroke
     let stroke = calculateStroke(W,H);
 
     // Draws ellipse always centered on canvas
