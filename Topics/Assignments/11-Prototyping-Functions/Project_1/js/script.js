@@ -7,20 +7,22 @@
 
 "use strict";
 
-/**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
-*/
+let Orb = {
+    hue: 0,
+    shade: 0,
+    size: 80,
+}
+
 function setup() {
     createCanvas(500, 500);
 
 }
 
 function draw() {
+    drawOrb(400, 400, 30);
     drawOrb(300, 300, 50);
     drawOrb(200, 200, 100);
     drawOrb(80, 80, 200);
-    
-
 }
 
 function drawOrb(W,H,Shade) {
@@ -48,3 +50,4 @@ function drawSquare(){
     rect(100,100, 50,50);
     pop();
 }
+
