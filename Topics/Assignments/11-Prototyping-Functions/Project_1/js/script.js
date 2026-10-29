@@ -8,7 +8,9 @@
 "use strict";
 
 let Orb = {
-    color: null,
+    colorR: null,
+    colorG: null,
+    colorB: null,
     size: 80,
 }
 
@@ -18,20 +20,19 @@ function setup() {
 }
 
 function draw() {
-    drawOrb(400, 400, 30);
-    drawOrb(300, 300, 50);
-    drawOrb(200, 200, 100);
-    drawOrb(80, 80, 200);
+    drawOrb(400, 400, Orb.colorR+30,Orb.colorG+30,Orb.colorB+30);
+    drawOrb(300, 300, Orb.colorR+50,Orb.colorG+50,Orb.colorB+50);
+    drawOrb(200, 200, Orb.colorR+100,Orb.colorG+100,Orb.colorB+100);
+    drawOrb(80, 80, Orb.colorR+200,Orb.colorG+200,Orb.colorB+200);
 }
 
-function drawOrb(W,H,Color) {
+function drawOrb(W,H, ColorR, ColorG, ColorB) {
 
     let stroke = calculateStroke(W,H);
 
-    fill(0, Color, Color);
+    fill(ColorR, ColorG, ColorB);
     strokeWeight(stroke)
     ellipse(width/2, height/2, W, H);
-
     
 }
 
@@ -53,6 +54,8 @@ function drawSquare(){
 }
 
 function mousePressed(){
-    Orb.color = random(0,255);
+    Orb.colorG = random(0,255);
+    Orb.colorB = random(0,255);
+    Orb.colorR = random(0, 255);
 
 }
