@@ -29,15 +29,17 @@ function draw() {
 
     
     if (mouseIsPressed) {
+        stroke(pen.color);
+        strokeWeight(pen.size);
         line(pmouseX, pmouseY, mouseX, mouseY); // Using line for a smoother brush stroke
     }
 
-    //pen cursor orb
-    push();
-    noStroke();
-    fill(pen.color);
-    ellipse(mouseX, mouseY, pen.size, pen.size);
-    pop();
+    // //pen cursor orb
+    // push();
+    // noStroke();
+    // fill(pen.color);
+    // ellipse(mouseX, mouseY, pen.size, pen.size);
+    // pop();
     
 
 }
