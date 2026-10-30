@@ -18,7 +18,7 @@ let canvasColor = 200;
 
 
 function setup() {
-    createCanvas(800, 800);
+    createCanvas(1100, 700);
     background(canvasColor);
 
 }
@@ -34,12 +34,17 @@ function draw() {
         line(pmouseX, pmouseY, mouseX, mouseY); // Using line for a smoother brush stroke
     }
 
-    // //pen cursor orb
-    // push();
-    // noStroke();
-    // fill(pen.color);
-    // ellipse(mouseX, mouseY, pen.size, pen.size);
-    // pop();
+    // Pen details preview box
+    push();
+    fill(255);
+    strokeWeight(2);
+    rect(50, 50, 200, 200);
+    pop();
+    fill(0);
+    textSize(15);
+    textWeight(700);
+    text("Pen size", 60, 80);
+ 
     
 
 }
