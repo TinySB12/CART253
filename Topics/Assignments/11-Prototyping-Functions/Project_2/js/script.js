@@ -7,15 +7,20 @@
 
 "use strict";
 
+let pen = {
+    color: null,
+    size: null,
+    x: null,
+    y: null
+}
+
 
 function setup() {
 
 }
 
 
-/**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
-*/
+
 function draw() {
 
 }
