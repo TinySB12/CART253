@@ -8,7 +8,8 @@
 
 "use strict";
 
-let shape = {
+// Variable for orbs— I mean ellipses
+let orb = {
     size: null,
     x: null,
     y: null,
@@ -20,9 +21,32 @@ let shape = {
 
 }
 
-let orbSize = shrinkShape(orbX, orbY, 50);
-let rectSize = shrinkShape(rectX, rectY, 80);
-let trianSize = shrinkShape(trianX, trianY, 70);
+// Variable for rectangles
+let rect = {
+    size: null,
+    x: null,
+    y: null,
+    color: {
+        r: null,
+        g: null,
+        b: null
+    }
+
+}
+
+// Varable for triangles
+let trian = {
+    size: null,
+    x: null,
+    y: null,
+    color: {
+        r: null,
+        g: null,
+        b: null
+    }
+
+}
+
 
 
 function setup() {
@@ -32,6 +56,8 @@ function setup() {
 
 function draw() {
     background('skyblue');
+
+
 }
 
 
@@ -45,12 +71,12 @@ function shrinkShape(tempX, tempY, tempSize) {
     return tempSize;
 }
 
-function colorPicker(tempColor, tempR, tempG, tempB) {
+function colorPicker() {
 
     let tempColor = {
-    tempR: random(100, 235),
-    tempG: random(100, 255),
-    tempB: random(100, 235)
+    r: random(100, 235),
+    g: random(100, 255),
+    b: random(100, 235)
     }
 
     return tempColor;
