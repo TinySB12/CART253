@@ -96,6 +96,6 @@ function drawShape(tempShape){
     } else if (tempShape.type === "rect") {
         rect(tempShape.x, tempShape.y, tempShape.size, tempShape.size);
     } else if (tempShape.type === "triangle") {
-        triangle(tempShape.x, tempShape.y, tempShape.size/2, tempShape.size/2, tempShape.size*2, tempShape.size*2);
+        triangle(tempShape.x, tempShape.y - tempShape.size/2, tempShape.x - tempShape.size/2, tempShape.y + tempShape.size/2, tempShape.x + tempShape.size/2, tempShape.y + tempShape.size/2);
     }
 }
