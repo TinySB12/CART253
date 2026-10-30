@@ -43,4 +43,6 @@ function mouseWheel(event) {
     pen.size -= 1; } else if (event.delta < 0) {
         pen.size += 1;
     }
+
+    pen.size = constrain(pen.size, 10, 100);
 }
