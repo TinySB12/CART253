@@ -19,20 +19,25 @@ let canvasColor = 200;
 
 function setup() {
     createCanvas(800, 800);
-    
+    background(canvasColor);
 
 }
 
 
 
 function draw() {
-    background(canvasColor);
 
-    //pen cursor
+    
+    if (mouseIsPressed) {
+        line(pmouseX, pmouseY, mouseX, mouseY); // Using line for a smoother brush stroke
+    }
+
+    //pen cursor orb
     push();
     noStroke();
     fill(pen.color);
     ellipse(mouseX, mouseY, pen.size, pen.size);
+    pop();
     
 
 }
@@ -44,5 +49,5 @@ function mouseWheel(event) {
         pen.size += 1;
     }
 
-    pen.size = constrain(pen.size, 10, 100);
+    pen.size = constrain(pen.size, 10, 100); // Constrains pensize between 10 and 100 px
 }
