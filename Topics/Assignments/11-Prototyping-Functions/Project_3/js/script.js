@@ -91,7 +91,11 @@ function colorPicker() {
 
 function drawShape(tempShape){
 
-    if (tempShape.type === "ellipse")
-
-    
+    if (tempShape.type === "ellipse") {
+        ellipse(tempShape.x, tempShape.y, tempShape.size, tempShape.size);
+    } else if (tempShape.type === "rect") {
+        rect(tempShape.x, tempShape.y, tempShape.size, tempShape.size);
+    } else if (tempShape.type === "triangle") {
+        triangle(tempShape.x, tempShape.y, tempShape.size/2, tempShape.size/2, tempShape.size*2, tempShape.size*2);
+    }
 }
