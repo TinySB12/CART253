@@ -31,13 +31,14 @@ let canvas = {
 }
 
 
+// The setup
 function setup() {
     createCanvas(1100, 700);
     background(canvas.color.r, canvas.color.g, canvas.color.b);
 
 }
 
-
+// Draws the drawing game
 function draw() {
 
     if (mouseIsPressed) {
@@ -68,6 +69,19 @@ function draw() {
     noStroke();
     ellipse(150, 150, pen.size, pen.size);
     pop();
+
+    // Instructions box
+    push();
+    fill(255);
+    strokeWeight(2);
+    rect(50, 300, 200, 230);
+    pop();
+    // Instructions text
+    textSize(15);
+    textWeight(500);
+    text("Press R, G, B, K to change colors to Red, Green, Blue & Black respectively.", 60, 320, 180, 250);
+    text("Press C to clear canvas.", 60, 410, 180, 250);
+    text("Press 1, 2 & 3 to change the shade of your canvas. This WILL reset your drawing.", 60, 440, 180, 250);
 
 
 }
@@ -101,14 +115,16 @@ function keyPressed() {
 
     // Changes canvas color to different shades depending on which key you press
     if (keyCode === 49) { 
-        changeColor(canvas, 240, 240, 240); // Change color to red if you press "R"
+        changeColor(canvas, 240, 240, 240); // Change color to Off-White if you press "1"
+        resetCanvas();
     } else if (keyCode === 50) {
-        changeColor(canvas, 180, 180, 180); // Change color to green if you press "G"
+        changeColor(canvas, 180, 180, 180); // Change color to Grey if you press "2"
+        resetCanvas();
     } else if (keyCode === 51) {
-        changeColor(canvas, 0, 0, 0); // Change color to blue if you press "B"
+        changeColor(canvas, 70, 70, 70); // Change color to Black if you press "3"
+        resetCanvas();
     } 
 
-    
 }
 
 // Function made to change color of any target object
@@ -118,6 +134,7 @@ function changeColor(target, r, g, b) {
     target.color.b = b;
 }
 
+// Resets canvas so it clears the drawings
 function resetCanvas() {
     background(canvas.color.r, canvas.color.g, canvas.color.b);
 }
