@@ -7,6 +7,7 @@
 
 "use strict";
 
+// Variable for pen
 let pen = {
     size: 10,
     x: null,
@@ -19,6 +20,7 @@ let pen = {
     }
 }
 
+// Variable for canvas color in case I wanna mess with it
 let canvasColor = 200;
 
 
@@ -32,13 +34,16 @@ function setup() {
 
 function draw() {
 
-    
     if (mouseIsPressed) {
         push();
-        stroke(pen.color);
+        stroke(pen.color.r, pen.color.g, pen.color.b);
         strokeWeight(pen.size);
         line(pmouseX, pmouseY, mouseX, mouseY); // Using line for a smoother brush stroke
         pop();
+    }
+
+    if (keyCode === 'r') {
+        changeColor(pen, 255, 0, 0);
     }
 
     // Pen details preview box
@@ -61,8 +66,6 @@ function draw() {
     ellipse(150, 150, pen.size, pen.size);
     pop();
 
- 
-    
 
 }
 
@@ -74,4 +77,10 @@ function mouseWheel(event) {
     }
 
     pen.size = constrain(pen.size, 10, 100); // Constrains pensize between 10 and 100 px
+}
+
+function changeColor(tempPen, r, g, b) {
+    tempPen.color.r = r;
+    tempPen.color.g = g;
+    tempPen.color.b = b;
 }
