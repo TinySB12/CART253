@@ -44,3 +44,15 @@ function shrinkShape(tempX, tempY, tempSize) {
 
     return tempSize;
 }
+
+function colorPicker(tempColor, tempR, tempG, tempB) {
+
+    let tempColor = {
+    tempR: random(100, 235),
+    tempG: random(100, 255),
+    tempB: random(100, 235)
+    }
+
+    return tempColor;
+
+}

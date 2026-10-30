@@ -89,8 +89,8 @@ function draw() {
 function mouseWheel(event) {
     // Increase or decrease pensize dependings on your mousescroll direction
     if (event.delta > 0) {
-    pen.size -= 1; } else if (event.delta < 0) {
-        pen.size += 1;
+    pen.size -= 5; } else if (event.delta < 0) {
+        pen.size += 5;
     }
 
     pen.size = constrain(pen.size, 10, 100); // Constrains pensize between 10 and 100 px
