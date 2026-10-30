@@ -20,6 +20,11 @@ let shape = {
 
 }
 
+let orbSize = shrinkShape(orbX, orbY, 50);
+let rectSize = shrinkShape(rectX, rectY, 80);
+let trianSize = shrinkShape(trianX, trianY, 70);
+
+
 function setup() {
     createCanvas(700, 600);
 
