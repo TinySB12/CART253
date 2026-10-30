@@ -27,6 +27,15 @@ function setup() {
 
 function draw() {
     background('skyblue');
+}
 
 
+function shrinkShape(tempX, tempY, tempSize) {
+    let d = dist(mouseX, mouseY, tempX, tempY);
+
+    if (d < 2*tempSize) {
+        tempSize = d/2;
+    }
+
+    return tempSize;
 }
