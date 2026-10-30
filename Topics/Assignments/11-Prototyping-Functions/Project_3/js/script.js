@@ -12,9 +12,9 @@
 let orb = {
 
     type: "ellipse",
-    size: null,
-    x: null,
-    y: null,
+    size: 60,
+    x: 150,
+    y: 200,
     color: {
         r: null,
         g: null,
@@ -42,9 +42,9 @@ let rect = {
 let trian = {
 
     type: "triangle",
-    size: null,
-    x: null,
-    y: null,
+    size: 80,
+    x: 200,
+    y: 180,
     color: {
         r: null,
         g: null,
@@ -69,6 +69,9 @@ function setup() {
 // Draws the shapes and the code
 function draw() {
     background('skyblue');
+
+    drawShape(orb);
+    drawShape(trian);
 
 
 }
