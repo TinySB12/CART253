@@ -21,16 +21,19 @@ let pen = {
 }
 
 // Variable for canvas color in case I wanna mess with it
-let canvasColor = {
-    r: 240,
-    g: 240,
-    b: 240
+let canvas = {
+
+    color: {
+        r: 240,
+        g: 240,
+        b: 240
+    }
 }
 
 
 function setup() {
     createCanvas(1100, 700);
-    background(canvasColor.r, canvasColor.g, canvasColor.b);
+    background(canvas.color.r, canvas.color.g, canvas.color.b);
 
 }
 
@@ -93,16 +96,16 @@ function keyPressed() {
 
     // Resets canvas color if you press "C"
     if (keyCode === 67) {
-        background(canvasColor.r, canvasColor.g, canvasColor.b);
+        background(canvas.color.r, canvas.color.g, canvas.color.b);
     }
 
     // Changes canvas color to different shades depending on which key you press
     if (keyCode === 49) { 
-        changeColor(canvasColor, 240, 240, 240); // Change color to red if you press "R"
+        changeColor(canvas, 240, 240, 240); // Change color to red if you press "R"
     } else if (keyCode === 50) {
-        changeColor(canvasColor, 180, 180, 180); // Change color to green if you press "G"
+        changeColor(canvas, 180, 180, 180); // Change color to green if you press "G"
     } else if (keyCode === 51) {
-        changeColor(canvasColor, 0, 0, 0); // Change color to blue if you press "B"
+        changeColor(canvas, 0, 0, 0); // Change color to blue if you press "B"
     } 
 
     
@@ -116,5 +119,5 @@ function changeColor(target, r, g, b) {
 }
 
 function resetCanvas() {
-    background(canvasColor.r, canvasColor.g, canvasColor.b);
+    background(canvas.color.r, canvas.color.g, canvas.color.b);
 }
