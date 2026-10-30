@@ -21,15 +21,18 @@ let pen = {
 }
 
 // Variable for canvas color in case I wanna mess with it
-let canvasColor = 200;
+let canvasColor = {
+    r: 240,
+    g: 240,
+    b: 240
+}
 
 
 function setup() {
     createCanvas(1100, 700);
-    background(canvasColor);
+    background(canvasColor.r, canvasColor.g, canvasColor.b);
 
 }
-
 
 
 function draw() {
@@ -41,18 +44,6 @@ function draw() {
         line(pmouseX, pmouseY, mouseX, mouseY); // Using line for a smoother brush stroke
         pop();
     }
-
-    if (keyCode === 82) {
-        changeColor(pen, 255, 0, 0);
-    } else if (keyCode === 71) {
-        changeColor(pen, 0, 255, 0);
-    } else if (keyCode === 66) {
-        changeColor(pen, 0, 0, 255);
-    } else if (keyCode === 75) {
-        changeColor(pen, 0, 0, 0);
-    }
-
-    console.log(keyCode);
 
     // Pen details preview box
     push();
@@ -70,7 +61,8 @@ function draw() {
 
     // Pen size preview
     push();
-    fill(pen.color);
+    fill(pen.color.r, pen.color.g, pen.color.b);
+    noStroke();
     ellipse(150, 150, pen.size, pen.size);
     pop();
 
@@ -87,8 +79,42 @@ function mouseWheel(event) {
     pen.size = constrain(pen.size, 10, 100); // Constrains pensize between 10 and 100 px
 }
 
-function changeColor(tempPen, r, g, b) {
-    tempPen.color.r = r;
-    tempPen.color.g = g;
-    tempPen.color.b = b;
+function keyPressed() {
+    // Changes pen color
+    if (keyCode === 82) { 
+        changeColor(pen, 255, 0, 0); // Change color to red if you press "R"
+    } else if (keyCode === 71) {
+        changeColor(pen, 0, 255, 0); // Change color to green if you press "G"
+    } else if (keyCode === 66) {
+        changeColor(pen, 0, 0, 255); // Change color to blue if you press "B"
+    } else if (keyCode === 75) {
+        changeColor(pen, 0, 0, 0); // Change color to Black if you press "K"
+    }
+
+    // Resets canvas color if you press "C"
+    if (keyCode === 67) {
+        background(canvasColor.r, canvasColor.g, canvasColor.b);
+    }
+
+    // Changes canvas color to different shades depending on which key you press
+    if (keyCode === 49) { 
+        changeColor(canvasColor, 240, 240, 240); // Change color to red if you press "R"
+    } else if (keyCode === 50) {
+        changeColor(canvasColor, 180, 180, 180); // Change color to green if you press "G"
+    } else if (keyCode === 51) {
+        changeColor(canvasColor, 0, 0, 0); // Change color to blue if you press "B"
+    } 
+
+    
+}
+
+// Function made to change color of any target object
+function changeColor(target, r, g, b) {
+    target.color.r = r;
+    target.color.g = g;
+    target.color.b = b;
+}
+
+function resetCanvas() {
+    background(canvasColor.r, canvasColor.g, canvasColor.b);
 }
