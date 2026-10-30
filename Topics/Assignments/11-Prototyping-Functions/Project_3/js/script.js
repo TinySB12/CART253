@@ -8,16 +8,25 @@
 
 "use strict";
 
-
-
-function setup() {
+let shape = {
+    size: null,
+    x: null,
+    y: null,
+    color: {
+        r: null,
+        g: null,
+        b: null
+    }
 
 }
 
+function setup() {
+    createCanvas(700, 600);
 
-/**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
-*/
+}
+
 function draw() {
+    background('skyblue');
+
 
 }
