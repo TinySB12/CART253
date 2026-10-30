@@ -10,6 +10,8 @@
 
 // Variable for orbs— I mean ellipses
 let orb = {
+
+    type: "ellipse",
     size: null,
     x: null,
     y: null,
@@ -23,6 +25,8 @@ let orb = {
 
 // Variable for rectangles
 let rect = {
+
+    type: "rect",
     size: null,
     x: null,
     y: null,
@@ -36,6 +40,8 @@ let rect = {
 
 // Varable for triangles
 let trian = {
+
+    type: "triangle",
     size: null,
     x: null,
     y: null,
@@ -81,4 +87,11 @@ function colorPicker() {
 
     return tempColor;
 
+}
+
+function drawShape(tempShape){
+
+    if (tempShape.type === "ellipse")
+
+    
 }
