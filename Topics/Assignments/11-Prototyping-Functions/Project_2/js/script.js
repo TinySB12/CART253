@@ -14,13 +14,18 @@ let pen = {
     y: null
 }
 
+let canvasColor = 200;
+
 
 function setup() {
+    createCanvas(800, 800);
+    background(canvasColor);
 
 }
 
 
 
 function draw() {
+    
 
 }
