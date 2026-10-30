@@ -8,10 +8,15 @@
 "use strict";
 
 let pen = {
-    color: 0,
     size: 10,
     x: null,
-    y: null
+    y: null,
+
+    color: {
+        r: 0,
+        g: 0,
+        b: 0
+    }
 }
 
 let canvasColor = 200;
@@ -29,9 +34,11 @@ function draw() {
 
     
     if (mouseIsPressed) {
+        push();
         stroke(pen.color);
         strokeWeight(pen.size);
         line(pmouseX, pmouseY, mouseX, mouseY); // Using line for a smoother brush stroke
+        pop();
     }
 
     // Pen details preview box
@@ -40,10 +47,20 @@ function draw() {
     strokeWeight(2);
     rect(50, 50, 200, 200);
     pop();
+    // Text inside preview box
     fill(0);
     textSize(15);
     textWeight(700);
-    text("Pen size", 60, 80);
+    text("Pen size:", 60, 80);
+    text(pen.size, 130, 80);
+    pop();
+
+    // Pen size preview
+    push();
+    fill(pen.color);
+    ellipse(150, 150, pen.size, pen.size);
+    pop();
+
  
     
 
