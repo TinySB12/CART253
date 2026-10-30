@@ -42,9 +42,17 @@ function draw() {
         pop();
     }
 
-    if (keyCode === 'r') {
+    if (keyCode === 82) {
         changeColor(pen, 255, 0, 0);
+    } else if (keyCode === 71) {
+        changeColor(pen, 0, 255, 0);
+    } else if (keyCode === 66) {
+        changeColor(pen, 0, 0, 255);
+    } else if (keyCode === 75) {
+        changeColor(pen, 0, 0, 0);
     }
+
+    console.log(keyCode);
 
     // Pen details preview box
     push();
