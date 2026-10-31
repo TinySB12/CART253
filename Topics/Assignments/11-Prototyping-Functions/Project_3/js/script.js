@@ -61,6 +61,7 @@ let trian = {
 function setup() {
     createCanvas(700, 600);
 
+    // Centers my rectangles so they shrink to the center rather than their corner
     rectMode(CENTER);
 
     // Randomizes color each time the code is loaded
@@ -75,6 +76,7 @@ function setup() {
 function draw() {
     background(250);
 
+    // Draws my different shapes based on which one I call
     drawShape(rectangle, 540, 400);
     drawShape(orb, 350, 300);
     drawShape(trian, 200, 240);
@@ -90,21 +92,26 @@ function draw() {
 function shrinkShape(tempX, tempY, tempSize) {
     let d = dist(mouseX, mouseY, tempX, tempY);
 
+    // Calculates the size of my shapes based on the distance between the cursor and the x and y of the target shape
     if (d < 2*tempSize) {
         tempSize = d/2;
     }
 
+    // Returns the value of tempSize
     return tempSize;
 }
 
+// Randomizes the color of each shape type every time the code is refreshed
 function colorPicker() {
 
+    // randomizes value for r g b
     let tempColor = {
     r: random(150, 255),
     g: random(150, 255),
     b: random(150, 255)
     }
 
+    // Returns the value of tempColor
     return tempColor;
 
 }
@@ -119,7 +126,7 @@ function drawShape(tempShape, tempX, tempY){
     // Passes the value of size calculated in shrinkShape to here where it will determine the shape size
     tempShape.size = shrinkShape(tempShape.x, tempShape.y, tempShape.originalSize);
 
-
+    // Color of my shapes that gets determined in function ColorPicker()
     fill(tempShape.color.r, tempShape.color.g, tempShape.color.b);
     noStroke();
 
