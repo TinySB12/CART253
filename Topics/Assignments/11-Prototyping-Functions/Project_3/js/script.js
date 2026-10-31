@@ -12,7 +12,8 @@
 let orb = {
 
     type: "ellipse",
-    size: 60,
+    size: 80,
+    originalSize: 80,
     x: 150,
     y: 200,
     color: {
@@ -24,10 +25,11 @@ let orb = {
 }
 
 // Variable for rectangles
-let rect = {
+let rectangle = {
 
     type: "rect",
     size: 70,
+    originalSize: 70,
     x: 100,
     y: 100,
     color: {
@@ -43,6 +45,7 @@ let trian = {
 
     type: "triangle",
     size: 80,
+    originalSize: 80,
     x: 200,
     y: 180,
     color: {
@@ -70,6 +73,7 @@ function setup() {
 function draw() {
     background('skyblue');
 
+    drawShape(rectangle);
     drawShape(orb);
     drawShape(trian);
 
@@ -104,7 +108,7 @@ function colorPicker() {
 function drawShape(tempShape){
 
     // Passes the value of size calculated in shrinkShape to here where it will determine the shape size
-    tempShape.size = shrinkShape(tempShape.x, tempShape.y, tempShape.size);
+    tempShape.size = shrinkShape(tempShape.x, tempShape.y, tempShape.originalSize);
 
     fill(tempShape.color.r, tempShape.color.g, tempShape.color.b);
 
