@@ -75,11 +75,14 @@ function setup() {
 function draw() {
     background(250);
 
-    drawShape(rectangle, 200, 200);
-    drawShape(orb, 300, 300);
-    drawShape(trian, 100, 100);
-
-
+    drawShape(rectangle, 540, 400);
+    drawShape(orb, 350, 300);
+    drawShape(trian, 200, 240);
+    drawShape(orb, 100, 400);
+    drawShape(orb, 400, 100);
+    drawShape(rectangle, 150, 100);
+    drawShape(trian, 370, 450);
+    drawShape(trian, 520, 150);
 }
 
 
@@ -109,12 +112,13 @@ function colorPicker() {
 // Draws either an ellipse, a rectangle or triangle depending on which shape type it receives
 function drawShape(tempShape, tempX, tempY){
 
-    // Passes the value of size calculated in shrinkShape to here where it will determine the shape size
-    tempShape.size = shrinkShape(tempShape.x, tempShape.y, tempShape.originalSize);
-
     // Parameters for the x and y of the shape
     tempShape.x = tempX;
     tempShape.y = tempY;
+
+    // Passes the value of size calculated in shrinkShape to here where it will determine the shape size
+    tempShape.size = shrinkShape(tempShape.x, tempShape.y, tempShape.originalSize);
+
 
     fill(tempShape.color.r, tempShape.color.g, tempShape.color.b);
     noStroke();
@@ -126,4 +130,6 @@ function drawShape(tempShape, tempX, tempY){
     } else if (tempShape.type === "triangle") { // Draws a triangle if the shape type is a triangle
         triangle(tempShape.x, tempShape.y - tempShape.size/2, tempShape.x - tempShape.size/2, tempShape.y + tempShape.size/2, tempShape.x + tempShape.size/2, tempShape.y + tempShape.size/2);
     }
+
 }
+
