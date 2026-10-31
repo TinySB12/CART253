@@ -12,10 +12,10 @@
 let orb = {
 
     type: "ellipse",
-    size: 150,
-    originalSize: 150,
-    x: 450,
-    y: 200,
+    size: 100,
+    originalSize: 100,
+    x: null,
+    y: null,
     color: {
         r: null,
         g: null,
@@ -30,8 +30,8 @@ let rectangle = {
     type: "rect",
     size: 100,
     originalSize: 100,
-    x: 200,
-    y: 130,
+    x: null,
+    y: null,
     color: {
         r: null,
         g: null,
@@ -44,10 +44,10 @@ let rectangle = {
 let trian = {
 
     type: "triangle",
-    size: 180,
-    originalSize: 180,
-    x: 300,
-    y: 380,
+    size: 100,
+    originalSize: 100,
+    x: null,
+    y: null,
     color: {
         r: null,
         g: null,
@@ -73,11 +73,11 @@ function setup() {
 
 // Draws the shapes and the code
 function draw() {
-    background('skyblue');
+    background(250);
 
-    drawShape(rectangle);
-    drawShape(orb);
-    drawShape(trian);
+    drawShape(rectangle, 200, 200);
+    drawShape(orb, 300, 300);
+    drawShape(trian, 100, 100);
 
 
 }
@@ -107,10 +107,14 @@ function colorPicker() {
 }
 
 // Draws either an ellipse, a rectangle or triangle depending on which shape type it receives
-function drawShape(tempShape){
+function drawShape(tempShape, tempX, tempY){
 
     // Passes the value of size calculated in shrinkShape to here where it will determine the shape size
     tempShape.size = shrinkShape(tempShape.x, tempShape.y, tempShape.originalSize);
+
+    // Parameters for the x and y of the shape
+    tempShape.x = tempX;
+    tempShape.y = tempY;
 
     fill(tempShape.color.r, tempShape.color.g, tempShape.color.b);
     noStroke();
