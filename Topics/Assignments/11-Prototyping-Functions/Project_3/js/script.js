@@ -12,9 +12,9 @@
 let orb = {
 
     type: "ellipse",
-    size: 80,
-    originalSize: 80,
-    x: 150,
+    size: 150,
+    originalSize: 150,
+    x: 450,
     y: 200,
     color: {
         r: null,
@@ -28,10 +28,10 @@ let orb = {
 let rectangle = {
 
     type: "rect",
-    size: 70,
-    originalSize: 70,
-    x: 100,
-    y: 100,
+    size: 100,
+    originalSize: 100,
+    x: 200,
+    y: 130,
     color: {
         r: null,
         g: null,
@@ -44,10 +44,10 @@ let rectangle = {
 let trian = {
 
     type: "triangle",
-    size: 80,
-    originalSize: 80,
-    x: 200,
-    y: 180,
+    size: 180,
+    originalSize: 180,
+    x: 300,
+    y: 380,
     color: {
         r: null,
         g: null,
@@ -61,9 +61,11 @@ let trian = {
 function setup() {
     createCanvas(700, 600);
 
+    rectMode(CENTER);
+
     // Randomizes color each time the code is loaded
     orb.color = colorPicker();
-    rect.color = colorPicker();
+    rectangle.color = colorPicker();
     trian.color = colorPicker();
 
 }
@@ -95,9 +97,9 @@ function shrinkShape(tempX, tempY, tempSize) {
 function colorPicker() {
 
     let tempColor = {
-    r: random(100, 235),
-    g: random(100, 255),
-    b: random(100, 235)
+    r: random(150, 255),
+    g: random(150, 255),
+    b: random(150, 255)
     }
 
     return tempColor;
@@ -111,6 +113,7 @@ function drawShape(tempShape){
     tempShape.size = shrinkShape(tempShape.x, tempShape.y, tempShape.originalSize);
 
     fill(tempShape.color.r, tempShape.color.g, tempShape.color.b);
+    noStroke();
 
     if (tempShape.type === "ellipse") { // Draws an ellipse if the shape type is ellipse
         ellipse(tempShape.x, tempShape.y, tempShape.size, tempShape.size);
