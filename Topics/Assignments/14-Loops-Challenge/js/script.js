@@ -11,7 +11,14 @@
 /**
  * OH LOOK I DIDN'T DESCRIBE SETUP!!
 */
-function setup() {
+
+let bunnyImg = undefined;
+
+
+async function setup() {
+    createCanvas(500, 500);
+    bunnyImg = await loadImage('assets/images/bunny.png');
+
 
 }
 
@@ -20,5 +27,6 @@ function setup() {
  * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
 */
 function draw() {
-
+    background('skyBlue');
+    image(bunnyImg, 100, 100);
 }
