@@ -43,5 +43,14 @@ I think so far I have had the most fun with this assignment! I also was weirdly 
 
 I'm excited for the next prototype assignment! And hopeful for an extended time limit to finish it.
 
-## XX/10/2026
+## 30/10/2026
+Topic of this entry: My prototypes - Functions
+
+So since I've been informed that the purpose of this journal is to NOT liveblog my reactions to the assignments but to also discuss the process of how I proceeded with each prototype, I'm gonna try and be more organized with my thoughts. No promises though!
+
+So my first prototype in the list was honestly purely me re-learning the material. I had struggled with understanding how the parameters worked when it came to passing values around, so I rewatched some of the learning material and ended up having to ask for advice again in class. I eventually figured things out and decided to just polish my dabble a bit and use parameters to change the colors of my shapes with a click. Nothing too exciting with this one but it was an important stepping stone for my upcoming prototypes.
+
+My second one was me getting distracted from the learning material when I first started it. I wanted to make a simple drawing program! So I started with all the basics that I knew and I basically had a functioning prototype! Only issue was I had forgotten to use parameters. So I admittedly had to figure out HOW to use parameters for this one and I ended up using it in my function ChangeColor! I also successfully passed my first proper objects in this one! It was very satisfying to figure out how passing objects worked in this.
+
+And finally, we come back to No Touchie V2, which as the name implies is the second version of a prototype I made for my conditionals! Except this time it includes other shapes! I think I truly grasped everything the class was trying to teach me about using parameters and functions in this project. I managed to code a function for calculating the distance between my cursor and the shape and use return value correctly in my first try. I managed to make a function that could target ANY of my three shapes rather than having one for each separate shape, and I was able to use parameters to EASILY draw ANY shape with my drawShape function by giving my different shapes a "type". Needless to say I'm very satisfied with it all.
 

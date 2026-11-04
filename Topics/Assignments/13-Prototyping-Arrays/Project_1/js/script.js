@@ -1,9 +1,8 @@
 /**
- * Title of Project
- * Author Name
+ * Dabbling for now
+ * Saba
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * Just experimenting with arrays and stuff
  */
 
 "use strict";
