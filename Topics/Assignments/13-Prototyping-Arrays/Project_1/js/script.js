@@ -13,15 +13,19 @@ let orbs = [];
 
 
 function setup() {
+    createCanvas(600, 400);
 
 }
 
 
 
 function draw() {
+    background('darkblue');
 
 }
 
+
+// Function to drop orbs at my mouse position
 function dropOrb() {
 
     // Creates my orb with its different properties
@@ -39,7 +43,8 @@ function dropOrb() {
 
     gravity: 0.5,
     bounce: 0.8
-
 }
+
+orbs.push(orb);
 
 }
