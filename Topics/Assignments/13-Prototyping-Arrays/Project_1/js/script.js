@@ -8,16 +8,26 @@
 "use strict";
 
 
-let balls = [];
+let orbs = [];
+
+
 
 function setup() {
 
 }
 
 
-/**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
-*/
+
 function draw() {
+
+}
+
+function dropOrb() {
+    
+    const orb = {
+    size: 30,
+    x: 0,
+    y: 0
+}
 
 }
