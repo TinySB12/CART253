@@ -2,14 +2,14 @@
  * Dabbling for now
  * Saba
  * 
- * Just experimenting with arrays and stuff
+ * Just experimenting with arrays and stuff - Gonna try coding bouncing balls!
  */
 
 "use strict";
 
-/**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
-*/
+
+let balls = [];
+
 function setup() {
 
 }
