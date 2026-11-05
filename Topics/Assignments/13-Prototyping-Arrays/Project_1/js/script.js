@@ -1,8 +1,9 @@
 /**
- * Dabbling for now
+ * Bouncing Orbs
  * Saba
  * 
- * Just experimenting with arrays and stuff - Gonna try coding bouncing balls!
+ * Just experimenting with arrays and stuff - Gonna try coding bouncing orbs!
+ * 
  */
 
 "use strict";
@@ -10,13 +11,10 @@
 
 let orbs = [];
 
-
-
 function setup() {
     createCanvas(600, 400);
 
 }
-
 
 
 function draw() {
@@ -58,7 +56,7 @@ function dropOrb() {
 
     // Orb speed
     speed: {
-        x: random(-1, 1),
+        x: random(-2, 2),
         y: 0.5
     },
 
@@ -71,6 +69,6 @@ orbs.push(orb);
 
 }
 
-function mousePressed() {
+function mouseIsPressed() {
     dropOrb();
 }
