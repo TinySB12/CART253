@@ -8,8 +8,10 @@
 
 "use strict";
 
-
+// My Array for orbs
 let orbs = [];
+// Max number of orbs allowed
+let maxOrbs = 100;
 
 function setup() {
     createCanvas(600, 400);
