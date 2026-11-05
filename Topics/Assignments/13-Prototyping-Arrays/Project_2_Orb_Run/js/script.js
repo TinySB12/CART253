@@ -1,9 +1,9 @@
 /**
- * Title of Project
- * Author Name
+ * Orb Run
+ * Saba
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * I'm going to attempt to make something similar to the dino run browser game
+ * 
  */
 
 "use strict";
