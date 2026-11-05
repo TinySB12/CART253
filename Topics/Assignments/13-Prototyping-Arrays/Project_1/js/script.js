@@ -22,6 +22,25 @@ function setup() {
 function draw() {
     background('darkblue');
 
+    for (let orb of orbs) {
+
+        // increase fall speed the more it falls
+        orb.speed.y += orb.gravity;
+        // make orbs move
+        orb.x += orb.speed.x;
+        orb.y += orb.speed.y;
+
+        if (orb.y >= height) {
+            orb.y = height - orb.size;
+            orb.speed.y *= -orb.bounce;
+        }
+
+        push();
+        fill(orb.color);
+        noStroke();
+        ellipse(orb.x, orb.y, orb.size, orb.size);
+
+    }
 }
 
 
@@ -33,7 +52,7 @@ function dropOrb() {
     size: 30,
     x: mouseX,
     y: mouseY,
-    color: 200,
+    color: 255,
 
     // Orb speed
     speed: {
