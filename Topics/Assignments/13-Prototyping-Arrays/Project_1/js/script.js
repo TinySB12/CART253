@@ -20,6 +20,10 @@ function setup() {
 function draw() {
     background('darkblue');
 
+    if (mouseIsPressed) {
+        dropOrb();
+    }
+
     for (let orb of orbs) {
 
         // increase fall speed the more it falls
@@ -56,7 +60,7 @@ function dropOrb() {
 
     // Orb speed
     speed: {
-        x: random(-2, 2),
+        x: random(-3, 3),
         y: 0.5
     },
 
@@ -69,6 +73,6 @@ orbs.push(orb);
 
 }
 
-function mouseIsPressed() {
+function mousePressed() {
     dropOrb();
 }
