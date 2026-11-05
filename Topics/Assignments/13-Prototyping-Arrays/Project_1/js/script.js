@@ -31,8 +31,8 @@ function draw() {
         orb.y += orb.speed.y;
 
         // make orbs bounce
-        if (orb.y >= height) {
-            orb.y = height - orb.size;
+        if (orb.y + orb.size/2 >= height) {
+            orb.y = height - orb.size/2;
             orb.speed.y *= -orb.bounce;
         }
 
@@ -62,6 +62,7 @@ function dropOrb() {
         y: 0.5
     },
 
+    // Orb gravity and bounce
     gravity: 0.5,
     bounce: 0.8
 }
