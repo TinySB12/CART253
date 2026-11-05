@@ -71,6 +71,10 @@ function dropOrb() {
     bounce: 0.8
 }
 
+if(orbs.length >= maxOrbs) {
+    orbs.splice(0,1);
+}
+
 orbs.push(orb);
 
 }
