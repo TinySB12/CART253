@@ -30,11 +30,13 @@ function draw() {
         orb.x += orb.speed.x;
         orb.y += orb.speed.y;
 
+        // make orbs bounce
         if (orb.y >= height) {
             orb.y = height - orb.size;
             orb.speed.y *= -orb.bounce;
         }
 
+        // Draw da ORB
         push();
         fill(orb.color);
         noStroke();
@@ -56,7 +58,7 @@ function dropOrb() {
 
     // Orb speed
     speed: {
-        x: 0.5,
+        x: random(-1, 1),
         y: 0.5
     },
 
