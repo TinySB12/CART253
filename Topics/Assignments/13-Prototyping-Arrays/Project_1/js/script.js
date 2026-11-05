@@ -67,3 +67,7 @@ function dropOrb() {
 orbs.push(orb);
 
 }
+
+function mousePressed() {
+    dropOrb();
+}
