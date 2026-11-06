@@ -49,7 +49,14 @@ function draw() {
     pop();
 
     playerFall(); // Apply gravity to the player
-    spawnObstacle(); // Spawn obstacles
+
+    obstacleTimer++;
+    if (obstacleTimer >= 250) {
+        spawnObstacle(); // Spawn obstacles
+        obstacleTimer = 0;
+
+    }
+    
     
     for (let obs of obstacles) {
         // Draw obstacle
@@ -108,4 +115,8 @@ function spawnObstacle() {
     // Adds obstacles in the array
     obstacles.push(obstacle);
 
+}
+
+function deleteObstacle() {
+    
 }
