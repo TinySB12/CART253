@@ -15,7 +15,24 @@ let maxParticles = 100;
 
 let mouseRadius = 80;
 
-// Variable for my particles
+
+// Creates Setup
+function setup() {
+    createCanvas(1200, 600);
+
+}
+
+
+
+// Creates Draw
+function draw() {
+    background(0);
+
+}
+
+function createParticles() {
+
+    // Variable for my particles
 const particle = {
      
      x: null,
@@ -34,24 +51,5 @@ const particle = {
             b: random(150, 255)
         }
     
-
-
-}
-
-
-// Creates Setup
-function setup() {
-    createCanvas(1200, 600);
-
-}
-
-
-
-// Creates Draw
-function draw() {
-    background(0);
-
-
-
 
 }
