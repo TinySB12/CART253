@@ -49,6 +49,12 @@ function draw() {
 
         }  
 
+        push();
+        fill(particle.color.r, particle.color.g, particle.color.b);
+        noStroke();
+        ellipse(particle.x, particle.y, particle.size);
+        pop();
+
     }
 
 }
@@ -58,8 +64,8 @@ function createParticles() {
     // Variable for my particles
     const particle = {
      
-     x: null,
-     y: null,
+     x: random(width),
+     y: random(height),
      originalX: 0,
      originalY: 0,
      size: random(4, 12),
