@@ -21,6 +21,7 @@ let player = {
 // Array to contain my obstacles
 let obstacles = [];
 
+// Variable for my obstacle spawn timer
 let obstacleTimer = 0;
 
 // Create Setup
@@ -51,7 +52,9 @@ function draw() {
     playerFall(); // Apply gravity to the player
 
     obstacleTimer++;
+
     if (obstacleTimer >= 250) {
+
         spawnObstacle(); // Spawn obstacles
         obstacleTimer = 0;
 
@@ -59,6 +62,7 @@ function draw() {
     
     
     for (let obs of obstacles) {
+
         // Draw obstacle
         push();
         fill(obs.color);
@@ -70,9 +74,6 @@ function draw() {
     }
 
     deleteObstacle();
-
-    console.log(obstacles.length);
-
 }
 
 function keyPressed() {
@@ -96,7 +97,7 @@ function playerFall() {
 
 }
 
-// function to move the obstacles on the x
+// Function to move the obstacles on the x
 function moveObstacle(obs) {
 
     obs.x -= obs.xspeed;
@@ -121,8 +122,10 @@ function spawnObstacle() {
 
 }
 
+// Function to delete obstacles
 function deleteObstacle() {
     
+    // Removes an obstacle out of my array once they are off screen to avoid them accumelating
     for (let i = obstacles.length -1; i >= 0; i--) {
 
         if (obstacles[i].x + obstacles[i].width < 0) {
