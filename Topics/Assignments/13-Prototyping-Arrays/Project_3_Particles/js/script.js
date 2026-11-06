@@ -20,6 +20,8 @@ let mouseRadius = 80;
 function setup() {
     createCanvas(1200, 600);
 
+    
+
 }
 
 
@@ -28,12 +30,17 @@ function setup() {
 function draw() {
     background(0);
 
+     // Create initial particles
+     for (let i = 0; i < maxParticles; i++) {
+        createParticles();
+     }
+
 }
 
 function createParticles() {
 
     // Variable for my particles
-const particle = {
+    const particle = {
      
      x: null,
      y: null,
@@ -51,5 +58,12 @@ const particle = {
             b: random(150, 255)
         }
     
+    // Store original position
+    particle.originalX = particle.x;
+    particle.originalY = particle.y;
+
+    // Add particle to array
+    particles.push(particle);
+    }
 
 }
