@@ -15,7 +15,7 @@ let player = {
     size: 50,
     yspeed: 0,
     gravity: 0.5,
-    jump: -50
+    jump: -10
 };
 
 // Array to contain my obstacles
@@ -51,8 +51,8 @@ function draw() {
 }
 
 function keyPressed() {
-    if (keyCode === 32) {
-        player.y += player.jump;
+    if (keyCode === 32 && player.y === 375) {
+        player.yspeed += player.jump;
     }
 }
 
@@ -61,7 +61,7 @@ function playerFall() {
     player.yspeed += player.gravity;
     player.y += player.yspeed;
 
-    if (player.y <= 375) {
+    if (player.y >= 375) {
         player.y = 375;
         player.yspeed = 0;
 }
