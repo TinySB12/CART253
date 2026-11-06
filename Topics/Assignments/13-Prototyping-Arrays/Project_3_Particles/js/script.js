@@ -1,24 +1,26 @@
 /**
- * Title of Project
- * Author Name
+ * Particles
+ * Saba
  * 
- * HOW EMBARRASSING! I HAVE NO DESCRIPTION OF MY PROJECT!
- * PLEASE REMOVE A GRADE FROM MY WORK IF IT'S GRADED!
+ * Somewhat inspired by my No Touchie prototypes, but I want the particles to move AWAY from the cursor,
+ * and then slowly come back when the cursor moves away, rather than have them shrink.
  */
 
 "use strict";
 
-/**
- * OH LOOK I DIDN'T DESCRIBE SETUP!!
-*/
+let particles = [];
+
+
+// Creates Setup
 function setup() {
+    createCanvas(1200, 600);
 
 }
 
 
-/**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
-*/
+
+// Creates Draw
 function draw() {
+    background(0);
 
 }

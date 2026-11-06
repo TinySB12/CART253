@@ -1,12 +1,12 @@
-# TITLE OF PROJECT
+# Particles
 
-AUTHOR NAME
+Saba
 
 [View this project online](URL_FOR_THE_RUNNING_PROJECT)
 
 ## Description
 
-This description should help the reader understand what the program is, anything they should know to be able to experience it (controls, special features, etc.), and what the desired user experience is. For example:
+Somewhat inspired by my No Touchie prototypes, but I want the particles to move AWAY from the cursor and then slowly come back when the cursor moves away, rather than have them shrink.
 
 ## Attribution
 
