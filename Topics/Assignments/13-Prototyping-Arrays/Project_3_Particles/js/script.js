@@ -8,7 +8,35 @@
 
 "use strict";
 
+// Array to contain my particles
 let particles = [];
+
+let maxParticles = 100;
+
+let mouseRadius = 80;
+
+// Variable for my particles
+const particle = {
+     
+     x: null,
+     y: null,
+
+        
+     originalX: 0,
+     originalY: 0,
+
+        
+     size: random(4, 12),
+
+     color: {
+            r: random(100, 255),
+            g: random(100, 255),
+            b: random(150, 255)
+        }
+    
+
+
+}
 
 
 // Creates Setup
@@ -22,5 +50,8 @@ function setup() {
 // Creates Draw
 function draw() {
     background(0);
+
+
+
 
 }
