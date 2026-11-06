@@ -11,7 +11,7 @@
 // Array to contain my particles
 let particles = [];
 
-let maxParticles = 150;
+let maxParticles = 200;
 
 let mouseRadius = 80;
 
