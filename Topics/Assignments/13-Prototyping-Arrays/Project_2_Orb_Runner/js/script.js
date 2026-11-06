@@ -24,6 +24,8 @@ let obstacles = [];
 // Variable for my obstacle spawn timer
 let obstacleTimer = 0;
 
+let score = 0;
+
 // Variable for lose condition
 let gameOver = false;
 
@@ -56,14 +58,16 @@ function draw() {
 
     obstacleTimer++;
 
+    // Spawns obstactles on a timer
     if (obstacleTimer >= 250) {
 
         spawnObstacle(); // Spawn obstacles
-        obstacleTimer = 0;
+        obstacleTimer = 0; // Resets timer back to 0
 
     }
     
     
+    // Loops obstacles and also checks if player hits them
     for (let obs of obstacles) {
 
         moveObstacle(obs); // Move the obstacles across screen
@@ -80,11 +84,27 @@ function draw() {
 
     }
 
+    // Deletes obstacles after they leave the screen
     deleteObstacle();
 
+    // Score
+    score++ // Increases score the longer the player survives
+    push();
+    textSize(15);
+    text('Score:', 20, 30);
+    text(score, 70, 30);
+    pop();
+
     // "Game Over!" screen
-    if (gameOver = true) {
-        noLoop();
+    if (gameOver === true) {
+        push();
+        fill(0);
+        textSize(50);
+        textAlign(CENTER);
+        text("GAME OVER!", width / 2, height / 2);
+        pop();
+
+        noLoop(); // Stops game from running
     }
 }
 
