@@ -55,7 +55,17 @@ function draw() {
 
     playerFall(); // Apply gravity to the player
     spawnObstacle();
-    moveObstacle(obstacle)
+    
+    for (let obs of obstacles) {
+        // Draw obstacle
+        push();
+        fill(obs.color);
+        noStroke();
+        rect(obs.x, obs.y, obs.width, obs.height);
+
+        moveObstacle(obs);
+
+    }
 
 }
 
