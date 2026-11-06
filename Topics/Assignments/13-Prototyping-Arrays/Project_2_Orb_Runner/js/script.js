@@ -21,14 +21,16 @@ let player = {
 // Array to contain my obstacles
 let obstacles = [];
 
+let obstacleTimer = 0;
 
+// Create Setup
 function setup() {
     createCanvas(1000, 500);
 
 }
 
 
-
+// Create Draw
 function draw() {
     background(200);
 
@@ -39,13 +41,6 @@ function draw() {
     rect(0, 400, width, 200);
     pop();
 
-    // // Draw obstacle
-    // push();
-    // fill(obstacle.color);
-    // noStroke();
-    // rect(obstacle.x, obstacle.y, obstacle.width, obstacle.height);
-    // pop();
-
     // Draw Player
     push();
     fill('darkblue');
@@ -54,7 +49,7 @@ function draw() {
     pop();
 
     playerFall(); // Apply gravity to the player
-    spawnObstacle();
+    spawnObstacle(); // Spawn obstacles
     
     for (let obs of obstacles) {
         // Draw obstacle
@@ -63,7 +58,7 @@ function draw() {
         noStroke();
         rect(obs.x, obs.y, obs.width, obs.height);
 
-        moveObstacle(obs);
+        moveObstacle(obs); // Move the obstacles across screen
 
     }
 
@@ -76,11 +71,13 @@ function keyPressed() {
     }
 }
 
+// Function to apply gravity to the player
 function playerFall() {
 
     player.yspeed += player.gravity;
     player.y += player.yspeed;
 
+    // Makes the player not fall past a certain y
     if (player.y >= 375) {
         player.y = 375;
         player.yspeed = 0;
@@ -88,14 +85,17 @@ function playerFall() {
 
 }
 
+// function to move the obstacles on the x
 function moveObstacle(obs) {
 
     obs.x -= obs.xspeed;
 
 }
 
+// Function to spawn obstacles
 function spawnObstacle() {
 
+    // variable for the obstacle
     const obstacle = {
     x: width,
     y: 320,
@@ -105,6 +105,7 @@ function spawnObstacle() {
     xspeed: 3.5
     }
 
+    // Adds obstacles in the array
     obstacles.push(obstacle);
 
 }
