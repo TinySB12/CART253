@@ -13,7 +13,7 @@ let player = {
     x: 200,
     y: 400,
     size: 50,
-    speed: 0,
+    yspeed: 0,
     gravity: 0.5,
     jump: -10
 };
@@ -32,6 +32,13 @@ function setup() {
 function draw() {
     background(200);
 
+    // Draw Player
+    push();
+    fill('darkblue');
+    noStroke();
+    ellipse(player.x, player.y, player.size);
+    pop();
+
 }
 
 function keyPressed() {
@@ -42,6 +49,7 @@ function keyPressed() {
 
 function playerFall() {
     if (player.y <= height) {
-        player.y =+ player.gravity;
+        player.yspeed += player.gravity;
+        player.y += player.yspeed
     }
 }
