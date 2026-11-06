@@ -15,7 +15,7 @@ let player = {
     size: 50,
     yspeed: 0,
     gravity: 0.5,
-    jump: -10
+    jump: -50
 };
 
 // Array to contain my obstacles
@@ -46,6 +46,8 @@ function draw() {
     ellipse(player.x, player.y, player.size);
     pop();
 
+    playerFall();
+
 }
 
 function keyPressed() {
@@ -55,8 +57,13 @@ function keyPressed() {
 }
 
 function playerFall() {
-    if (player.y <= height) {
-        player.yspeed += player.gravity;
-        player.y += player.yspeed
-    }
+
+    player.yspeed += player.gravity;
+    player.y += player.yspeed;
+
+    if (player.y <= 375) {
+        player.y = 375;
+        player.yspeed = 0;
+}
+
 }
