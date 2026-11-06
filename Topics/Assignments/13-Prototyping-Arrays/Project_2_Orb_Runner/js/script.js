@@ -24,6 +24,9 @@ let obstacles = [];
 // Variable for my obstacle spawn timer
 let obstacleTimer = 0;
 
+// Variable for lose condition
+let gameOver = false;
+
 // Create Setup
 function setup() {
     createCanvas(1000, 500);
@@ -63,13 +66,15 @@ function draw() {
     
     for (let obs of obstacles) {
 
+        moveObstacle(obs); // Move the obstacles across screen
+
         // Draw obstacle
         push();
         fill(obs.color);
         noStroke();
         rect(obs.x, obs.y, obs.width, obs.height);
+        pop();
 
-        moveObstacle(obs); // Move the obstacles across screen
 
     }
 
@@ -133,4 +138,20 @@ function deleteObstacle() {
         }
 
     }
+}
+
+function checkHit(obs) {
+
+    // find the closest point on the rectangle to the player (I admit I needed help with this part)
+    let closestX = constrain(player.x, obs.x, obs.x + obs.width);
+    let closestY = constrain(player.y, obs.y, obs.y + obs.height);
+
+    // Calculate distance between player and the closest points of the obstacle
+    let distance = dist(player.x, player.y, closestX, closestY);
+
+    // Check if player hits obstacle, end game if so
+    if (distance < player.size / 2) {
+        gameOver = true;
+    }
+
 }
