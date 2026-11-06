@@ -69,6 +69,10 @@ function draw() {
 
     }
 
+    deleteObstacle();
+
+    console.log(obstacles.length);
+
 }
 
 function keyPressed() {
@@ -119,5 +123,11 @@ function spawnObstacle() {
 
 function deleteObstacle() {
     
-    for (let i = obstacles.length; i >= 0; i = i -1)
+    for (let i = obstacles.length -1; i >= 0; i--) {
+
+        if (obstacles[i].x + obstacles[i].width < 0) {
+            obstacles.splice(i, 1);
+        }
+
+    }
 }
