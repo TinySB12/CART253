@@ -10,16 +10,24 @@
 
 // Player and its properties
 let player = {
-    x: 200,
+    x: 240,
     y: 375,
     size: 50,
     yspeed: 0,
     gravity: 0.5,
-    jump: -10
+    jump: -12
 };
 
 // Array to contain my obstacles
 let obstacles = [];
+
+const obstacle = {
+    x: 200,
+    y: 200,
+    size: 20,
+    color: 150,
+    xspeed: 0.5
+}
 
 
 function setup() {
@@ -39,6 +47,13 @@ function draw() {
     rect(0, 400, width, 200);
     pop();
 
+    // Draw obstacle
+    push();
+    fill(obstacle.color);
+    noStroke();
+    rect(obstacle.x, obstacle.y, obstacle.size, obstacle.size);
+    pop();
+
     // Draw Player
     push();
     fill('darkblue');
@@ -46,11 +61,12 @@ function draw() {
     ellipse(player.x, player.y, player.size);
     pop();
 
-    playerFall();
+    playerFall(); // Apply gravity to the player
 
 }
 
 function keyPressed() {
+    // Allow player to jump ONLY when they are grounded to avoid double jumps
     if (keyCode === 32 && player.y === 375) {
         player.yspeed += player.jump;
     }
@@ -64,6 +80,7 @@ function playerFall() {
     if (player.y >= 375) {
         player.y = 375;
         player.yspeed = 0;
-}
+    }
 
 }
+
