@@ -68,6 +68,8 @@ function draw() {
 
         moveObstacle(obs); // Move the obstacles across screen
 
+        checkCollision(obs); // Check for collision 
+
         // Draw obstacle
         push();
         fill(obs.color);
@@ -79,6 +81,11 @@ function draw() {
     }
 
     deleteObstacle();
+
+    // "Game Over!" screen
+    if (gameOver = true) {
+        noLoop();
+    }
 }
 
 function keyPressed() {
