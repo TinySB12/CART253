@@ -119,4 +119,5 @@ function spawnObstacle() {
 
 function deleteObstacle() {
     
+    for (let i = obstacles.length; i >= 0; i = i -1)
 }
