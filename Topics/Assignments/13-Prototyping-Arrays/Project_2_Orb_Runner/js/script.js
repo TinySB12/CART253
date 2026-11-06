@@ -11,7 +11,7 @@
 // Player and its properties
 let player = {
     x: 200,
-    y: 400,
+    y: 375,
     size: 50,
     yspeed: 0,
     gravity: 0.5,
@@ -31,6 +31,13 @@ function setup() {
 
 function draw() {
     background(200);
+
+    // Draw ground
+    push();
+    fill(150);
+    noStroke();
+    rect(0, 400, width, 200);
+    pop();
 
     // Draw Player
     push();
