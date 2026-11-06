@@ -22,10 +22,11 @@ let player = {
 let obstacles = [];
 
 const obstacle = {
-    x: 200,
-    y: 200,
-    size: 20,
-    color: 150,
+    x: 400,
+    y: 320,
+    width: 50,
+    height: 150,
+    color: 100,
     xspeed: 0.5
 }
 
@@ -42,7 +43,7 @@ function draw() {
 
     // Draw ground
     push();
-    fill(150);
+    fill(100);
     noStroke();
     rect(0, 400, width, 200);
     pop();
@@ -51,7 +52,7 @@ function draw() {
     push();
     fill(obstacle.color);
     noStroke();
-    rect(obstacle.x, obstacle.y, obstacle.size, obstacle.size);
+    rect(obstacle.x, obstacle.y, obstacle.width, obstacle.height);
     pop();
 
     // Draw Player
@@ -84,3 +85,8 @@ function playerFall() {
 
 }
 
+function moveObstacle(obs) {
+
+    obs.x -= obs.speed;
+
+}
