@@ -42,14 +42,14 @@ function draw() {
 
         let speedX = particle.x - mouseX;
         let speedY = particle.y - mouseY;
-        particle.x += speedX*0.5;
-        particle.y += speedY*0.5;
+        particle.x += speedX*0.05;
+        particle.y += speedY*0.05;
 
         } else {
 
         particle.x = lerp(particle.x, particle.originalX, 0.05);
         particle.y = lerp(particle.y, particle.originalY, 0.05);
-        
+
         }
 
         push();
