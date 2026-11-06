@@ -17,6 +17,8 @@ let player = {
     jump: null,
 };
 
+let obstacles = [];
+
 
 function setup() {
     createCanvas(1000, 500);
