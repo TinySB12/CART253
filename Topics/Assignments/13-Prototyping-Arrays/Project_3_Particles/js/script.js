@@ -39,13 +39,18 @@ function draw() {
         let d = dist(mouseX, mouseY, particle.x, particle.y);
 
         if (d < mouseRadius) {
-            let speedX = particle.x - mouseX;
-            let speedY = particle.y - mouseY;
 
-            particle.x += speedX*0.5;
-            particle.y += speedY*0.5;
+        let speedX = particle.x - mouseX;
+        let speedY = particle.y - mouseY;
+        particle.x += speedX*0.5;
+        particle.y += speedY*0.5;
 
-        }  
+        } else {
+
+        particle.x = lerp(particle.x, particle.originalX, 0.05);
+        particle.y = lerp(particle.y, particle.originalY, 0.05);
+        
+        }
 
         push();
         fill(particle.color.r, particle.color.g, particle.color.b);
