@@ -30,10 +30,26 @@ function setup() {
 function draw() {
     background(0);
 
-     // Create initial particles
-     for (let i = 0; i < maxParticles; i++) {
-        createParticles();
-     }
+
+    // Create the particles
+    for (let i = 0; i < maxParticles; i++) {
+       createParticles();
+    }
+
+    for (let particle of particles) {
+        
+        let d = dist(mouseX, mouseY, particle.x, particle.y);
+
+        if (d < mouseRadius) {
+            let speedX = particle.x - mouseX;
+            let speedY = particle.y - mouseY;
+
+            particle.x += speedX*0.5;
+            particle.y += speedY*0.5;
+
+        }  
+
+    }
 
 }
 
@@ -44,12 +60,8 @@ function createParticles() {
      
      x: null,
      y: null,
-
-        
      originalX: 0,
      originalY: 0,
-
-        
      size: random(4, 12),
 
      color: {
