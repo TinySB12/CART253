@@ -58,12 +58,13 @@ function createParticles() {
             b: random(150, 255)
         }
     
+    }
     // Store original position
     particle.originalX = particle.x;
     particle.originalY = particle.y;
 
     // Add particle to array
     particles.push(particle);
-    }
+    
 
 }
