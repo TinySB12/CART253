@@ -8,15 +8,17 @@
 
 "use strict";
 
+// Player and its properties
 let player = {
     x: 200,
     y: 400,
     size: 50,
     speed: 0,
     gravity: 0.5,
-    jump: null,
+    jump: -10
 };
 
+// Array to contain my obstacles
 let obstacles = [];
 
 
@@ -30,4 +32,16 @@ function setup() {
 function draw() {
     background(200);
 
+}
+
+function keyPressed() {
+    if (keyCode === 32) {
+        player.y += player.jump;
+    }
+}
+
+function playerFall() {
+    if (player.y <= height) {
+        player.y =+ player.gravity;
+    }
 }
