@@ -109,7 +109,7 @@ function draw() {
 }
 
 function keyPressed() {
-    // Allow player to jump ONLY when they are grounded to avoid double jumps
+    // Allow player to jump with the spacebar ONLY when they are grounded to avoid double jumps
     if (keyCode === 32 && player.y === 375) {
         player.yspeed += player.jump;
     }
