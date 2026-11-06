@@ -11,7 +11,7 @@
 // Array to contain my particles
 let particles = [];
 
-let maxParticles = 100;
+let maxParticles = 150;
 
 let mouseRadius = 80;
 
@@ -20,6 +20,10 @@ let mouseRadius = 80;
 function setup() {
     createCanvas(1200, 600);
 
+       // Create the particles
+    for (let i = 0; i < maxParticles; i++) {
+       createParticles();
+    }
     
 
 }
@@ -29,12 +33,6 @@ function setup() {
 // Creates Draw
 function draw() {
     background(0);
-
-
-    // Create the particles
-    for (let i = 0; i < maxParticles; i++) {
-       createParticles();
-    }
 
     for (let particle of particles) {
         
