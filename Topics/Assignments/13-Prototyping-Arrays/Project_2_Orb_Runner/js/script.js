@@ -68,7 +68,7 @@ function draw() {
 
         moveObstacle(obs); // Move the obstacles across screen
 
-        checkCollision(obs); // Check for collision 
+        checkHit(obs); // Check for collision 
 
         // Draw obstacle
         push();
