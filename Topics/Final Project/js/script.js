@@ -87,7 +87,7 @@ let crop = {
 } 
 
 function setup() {
-    createCanvas(500,500);
+    createCanvas(700,500);
     
 
 }
@@ -112,8 +112,37 @@ function drawFarm(){
     noStroke();
     fill(242, 216, 162);
     rect(50, 0, 100, height);
+    rect(100, 200, 500, 50);
+    rect(400, 50, 50, 350);
+    pop();
 
+    //plot1
+    push();
+    noStroke();
+    fill(112, 77, 58);
+    rect(250, 50, 150, 150);
+    pop();
 
+    //plot2
+    push();
+    noStroke();
+    fill(112, 77, 58);
+    rect(450, 50, 150, 150);
+    pop();
+
+    //plot3
+    push();
+    noStroke();
+    fill(112, 77, 58);
+    rect(250, 250, 150, 150);
+    pop();
+
+    //plot4
+    push();
+    noStroke();
+    fill(112, 77, 58);
+    rect(450, 250, 150, 150);
+    pop();
 
 
 }
