@@ -29,16 +29,39 @@
 // Determines that the game has started.
 let gameState = "start";
 
+// Inventory that will hold the products
 let inventory = [];
 
+// The player's properties
 let farmer = {
     x: 50,
     y: 50
 };
 
+// Money (You start with $500)
 let money = 500;
 
-// my plants
+let farm = {
+    plot1: {
+        status: ["unlocked", "notPlanted"]
+    },
+
+    plot2: {
+        status: ["locked", "notPlanted"]
+    },
+
+    plot3: {
+        status: ["locked", "notPlanted"]
+    },
+    
+    plot2: {
+        status: ["locked", "notPlanted"]
+    },
+
+    
+}
+
+// My plants
 let crop = {
 
     tomato: {
@@ -74,51 +97,27 @@ function setup() {
  * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
 */
 function draw() {
+    drawFarm();
 
-    waterPlant(crop.tomato);
     
+    
+}
 
-    // if(gameState ==="start"){
-    //     background("pink")
+// The farm map. You start here.
+function drawFarm(){
+    background("green");
+    
+    //road
+    push();
+    noStroke();
+    fill(242, 216, 162);
+    rect(50, 0, 100, height);
 
-    // }
-    // else if(gameState === "play"){
-    //         background(0);
-    //         drawButton();
 
-    // }
 
 
 }
 
-// function drawButton() {
-
-//     push();
-//     fill(button.color);
-//     noStroke();
-//     rect(button.x,button.y,button.width,button.height);
-//     pop();
-
-// }
-
-// function checkButton(tempbutton) {
-
-//     if (mouseX > tempbutton.x && mouseX < tempbutton.x + tempbutton.width
-//         && mouseY > tempbutton.y && mouseY < tempbutton.y + tempbutton.height) {
-//             console.log('button Is pressed!')
-//         }
-    
-
-// }
-
-// function mousePressed() {
-//     checkButton(button);
-// }
-// function keyPressed(){
-//     if(keyCode === 32){
-//         gameState = "play";
-//     }
-// }
 
 function waterPlant(plant){
 
