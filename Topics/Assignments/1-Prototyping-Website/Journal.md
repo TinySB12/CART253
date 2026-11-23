@@ -54,3 +54,41 @@ My second one was me getting distracted from the learning material when I first 
 
 And finally, we come back to No Touchie V2, which as the name implies is the second version of a prototype I made for my conditionals! Except this time it includes other shapes! I think I truly grasped everything the class was trying to teach me about using parameters and functions in this project. I managed to code a function for calculating the distance between my cursor and the shape and use return value correctly in my first try. I managed to make a function that could target ANY of my three shapes rather than having one for each separate shape, and I was able to use parameters to EASILY draw ANY shape with my drawShape function by giving my different shapes a "type". Needless to say I'm very satisfied with it all.
 
+## 06/11/2026
+Topic of this entry: My prototypes - Arrays
+
+This is a late entry. But I am going to focus on the progress of how I did each prototype.
+
+Starting with my first one, I was actually inspired by the Arrays Challenge with all the bouncing balls across the canvas, and I wanted to try a different approach with it. I wanted to imitate gravity and have the balls accelerate in speed the further they fell and have a bigger bounce off the bottom of the canvas, and slowly begin bouncing shorter and shorter until they stopped. I did this by giving my ball(or orb object as they're called in the script) both a gravity property as well as bounce. Gravity is slowly added to their yspeed and bounce only gets applied when the orb's x + the radius of the eclipse hits the maxiumum Y of the canvas. Like the challenge (and because I also wanted to try and use a loop for all of these prototypes, even despite loop prototypes being taken off of the syllabus), I used a For loop to have this effect be applied to every orb that would be spawned. For the array part, I created an orbs[] array to push my objects into it with every key press (since the orbs spawn with your mouse click, as your mouse position).
+
+One interesting thing that I wasn't expecting to stumble upon, however, was when my browser began slowing down and crashing when I spawned too many orbs. This is how I came up across splice, which allowed me to set a maximum amount of objects within my array, by using a condition that if the length of my array reached a certain number, that the last object would be removed. Learning splice here comes up in my next prototype as well in a very fun way I'm excited to share.
+
+Orb Runner, my second prototype is actually inspired by the offline browser game Dino runner. I was curious if I would be able to put the obstacles within an array while coding it. Doing this one was very fun because it made me realize that I could in fact make my own dino runner inspired game in the future if I so wished.
+
+I started this one with my obstacles array and writing my data and variables for the player. I've noticed that I begin most of my scripts by putting down the data first before I try to actually draw them. Something worth keeping in mind. I also fumbled a lot with where I wanted the ground to be and how I wanted everything to be placed on my canvas when it did come to coding it.
+
+I used what I had learned in my first arrays prototype to code in a "jump" rather than "bounce" for my player ellipse. Using gravity, I gave it the same effect of slowly falling down after bouncing up to give the impression of a smooth arc motion to the action. I once again used a For loop to spawn my obstacles and have them move across the screen, while also using a "check colission" function I coded earlier to have the script check and see if the player ellipse's x + radius came into contact with my rectangle obstacles, to which it will trigger a GameOver! screen.
+
+And using splice and another For loop, I was able to code something that would remove my objects from the array once they went off screen. If you use console.log on the length of my array, you will see this happening which I think is very cool!
+
+And for my last prototype, Particles, I was inspired by my "No Touchie" series, except this time I wanted the objects to move AWAY rather than shrink. This one was simpler to do, but I enjoy its visuals the most.
+
+Same beginning, start with making an array for my particles, set a max amount of particles and make a variable for the particles. I eventually move my variable for the particles within a function dedicated to creating them. (I forgot to mention that I ended up doing this for the previous one as well for the obstacles). 
+
+I had the spawn particles be put in setup because I wasn't sure how else to make them only spawn once, and I had every spawned particle be stored within the particles array. And then, using a For loop (we love For loops in this house) I had every single one of them move away from my mouse after reaching within a certain radius of it that I had set in a variable as well. To make the motion feel smooth, I multiplied their x and y speed by 0.05 before they'd be applied to their x and y position, and for when they'd move back to their original position, I used lerp.
+
+Not much else to say about this last one other than I really like how the final result looks and feels.
+
+## 23/11/2026
+
+Topic of this entry: Final Project - Week 1
+
+I know this is on a monday, but I was quite occupied last week and had been hoping to have more progress done before I wrote my entry and ended up miscalculating a lot of things. Whoops!
+
+I admittedly didn't spend as much time working on my final project as I would have liked on my first week, but I am very happy with what I DID make progress with. I know what I am going to be coding and going to the workshop class I was able to get the confirmation and a lot of good advice from my professor on how to make some parts of it work, as well as a green light for my idea in the first place which is the biggest most important part of this at all.
+
+I am going to be making a simple farmer game. Main goal is to have a farmer who buys from a market, plants seeds and waits for the crops to grow and then goes and sells them back to the market to buy more, better seeds. There's going to be three locations that the farmer switches to by walking up and down a path which will then make the different areas spawn in. I DO need to figure out how to have the different loaded areas NOT interfer with the other locations, especially for the crops while they are growing but before I do that I want to have at least ONE location done.
+
+Still, it's nice to know what I'm going to be working towards! Wished I had more to share but I didn't end up working too much on the script other than setting down my data and drawing the farm location without any interactions possible yet. I still need to draw my player as well. 
+
+
