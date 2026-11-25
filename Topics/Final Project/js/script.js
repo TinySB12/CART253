@@ -4,23 +4,22 @@
  * Farmer's Grind
  * Saba
  * 
- * Still a WIP
  * 
  * The game follows a farmer who has to farm, collect its crops, sell them at the market and make money—
  * so it can keep paying its slowly rising rent. The game should have a minimum of three locations.
  * 
- * - Home location where farmer skips to the next day
+ * - Home location where farmer skips to the next day (Not prioritized.)
  * - Market where you buy seeds and sell crops
  * - Farm where you plant seeds and harvest them
  * 
- * The stakes of the game is the slowly rising rent as time goes.
+ * The stakes of the game is the slowly rising rent as time goes. (Not prioritized.)
  * This could also be a debt instead of rent that the farmer needs to pay to win.
  * 
  * Main systems I want to include:
  * - An inventory system (using an array to do this)
  * - Different crops. (Will simplify by giving different crops a different type, so that the same function can grow each one of them differently.)
- * - A pause menu 
- * -
+ * - A pause option.
+ * - TBA
  * 
  */
 
@@ -43,19 +42,39 @@ let money = 500;
 
 let farm = {
     plot1: {
-        status: ["unlocked", "notPlanted"]
+        x: 250,
+        y: 50,
+        w: 150,
+        h: 150,
+        status: ["unlocked", "notPlanted"],
+        crop: null
     },
 
     plot2: {
-        status: ["locked", "notPlanted"]
+        x: 450,
+        y: 50,
+        w: 150,
+        h: 150,
+        status: ["locked", "notPlanted"],
+        crop: null
     },
 
     plot3: {
-        status: ["locked", "notPlanted"]
+        x: 250,
+        y: 250,
+        w: 150,
+        h: 150,
+        status: ["locked", "notPlanted"],
+        crop: null
     },
     
-    plot2: {
-        status: ["locked", "notPlanted"]
+    plot4: {
+        x: 450,
+        y: 250,
+        w: 150,
+        h: 150,
+        status: ["locked", "notPlanted"],
+        crop: null
     },
 
     
