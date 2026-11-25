@@ -35,7 +35,8 @@ let inventory = [];
 let farmer = {
     x: 85,
     y: 85,
-    speed: 3
+    speed: 3,
+    nearestplot: null
 };
 
 // Money (You start with $500)
@@ -115,10 +116,16 @@ function setup() {
 function draw() {
     drawFarm();
     moveFarmer();
-    drawFarmer();
+
+    farmer.nearestplot = null;
+    
 
     checkPlot(farm.plot1);
+    checkPlot(farm.plot2);
+    checkPlot(farm.plot3);
+    checkPlot(farm.plot4);
 
+    drawFarmer();
     
     
 }
@@ -208,6 +215,7 @@ function checkPlot(plot){
 
     if(d < 100){
         console.log("Interact distance!");
+        farmer.nearestplot = plot;
     }
 }
 
