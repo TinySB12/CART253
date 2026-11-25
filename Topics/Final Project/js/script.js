@@ -33,8 +33,8 @@ let inventory = [];
 
 // The player's properties
 let farmer = {
-    x: 50,
-    y: 50
+    x: 85,
+    y: 85
 };
 
 // Money (You start with $500)
@@ -111,15 +111,22 @@ function setup() {
 
 }
 
-
-/**
- * OOPS I DIDN'T DESCRIBE WHAT MY DRAW DOES!
-*/
 function draw() {
     drawFarm();
+    drawFarmer();
 
     
     
+}
+
+// Draw the farmer
+function drawFarmer(){
+    push();
+    noStroke();
+    fill(0, 0, 200);
+    rect(farmer.x, farmer.y, 25);
+    pop();
+
 }
 
 // The farm map. You start here.
@@ -186,7 +193,22 @@ function drawFarm(){
 
 }
 
+// Checks if farmer is close enough to each plot so it can interact with it.
+function checkPlot(plot){
+    let d = dist(
+        farmer.x,
+        farmer.y,
+        plot.x + plot.w/2,
+        plot.y + plot.h/2
+    );
 
+    if(d < 100){
+        console.log("Interact distance!");
+    }
+}
+
+
+// WIP of a function to water the plants later
 function waterPlant(plant){
 
     if (plant.status.includes("thirsty")) {
