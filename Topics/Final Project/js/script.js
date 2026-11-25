@@ -139,28 +139,48 @@ function drawFarm(){
     push();
     noStroke();
     fill(112, 77, 58);
-    rect(250, 50, 150, 150);
+    rect(
+    farm.plot1.x,
+    farm.plot1.y,
+    farm.plot1.w,
+    farm.plot1.h
+    );
     pop();
 
     //plot2
     push();
     noStroke();
     fill(112, 77, 58);
-    rect(450, 50, 150, 150);
+    rect(
+    farm.plot2.x,
+    farm.plot2.y,
+    farm.plot2.w,
+    farm.plot2.h
+    );
     pop();
 
     //plot3
     push();
     noStroke();
     fill(112, 77, 58);
-    rect(250, 250, 150, 150);
+    rect(
+    farm.plot3.x,
+    farm.plot3.y,
+    farm.plot3.w,
+    farm.plot3.h
+    );
     pop();
 
     //plot4
     push();
     noStroke();
     fill(112, 77, 58);
-    rect(450, 250, 150, 150);
+    rect(
+    farm.plot4.x,
+    farm.plot4.y,
+    farm.plot4.w,
+    farm.plot4.h
+    );
     pop();
 
 
