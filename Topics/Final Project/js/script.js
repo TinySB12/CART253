@@ -34,7 +34,8 @@ let inventory = [];
 // The player's properties
 let farmer = {
     x: 85,
-    y: 85
+    y: 85,
+    speed: 3
 };
 
 // Money (You start with $500)
@@ -113,6 +114,7 @@ function setup() {
 
 function draw() {
     drawFarm();
+    moveFarmer();
     drawFarmer();
 
     
@@ -213,5 +215,20 @@ function waterPlant(plant){
 
     if (plant.status.includes("thirsty")) {
         console.log("DRINK OITER");
+    }
+}
+
+function moveFarmer(){
+    if(keyIsDown(LEFT_ARROW)){
+        farmer.x -= farmer.speed;
+    }
+    if(keyIsDown(RIGHT_ARROW)){
+        farmer.x += farmer.speed;
+    }
+    if(keyIsDown(UP_ARROW)){
+        farmer.y -= farmer.speed;
+    }
+    if(keyIsDown(DOWN_ARROW)){
+        farmer.y += farmer.speed;
     }
 }
