@@ -117,6 +117,8 @@ function draw() {
     moveFarmer();
     drawFarmer();
 
+    checkPlot(farm.plot1);
+
     
     
 }
