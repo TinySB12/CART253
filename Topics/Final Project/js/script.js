@@ -28,6 +28,9 @@
 // Determines that the game has started.
 let gameState = "start";
 
+// Sets menu status to closed
+let menuOpen = false;
+
 // Inventory that will hold the products
 let inventory = [];
 
@@ -119,7 +122,10 @@ function setup() {
 
 function draw() {
     drawFarm();
-    moveFarmer();
+
+    if (menuOpen === false) {
+        moveFarmer();
+    }
 
     farmer.nearestObject = null;
     
@@ -130,6 +136,8 @@ function draw() {
     checkPlot(farm.plot4);
 
     drawFarmer();
+
+    drawInteractionMenu();
     
     
 }
@@ -247,3 +255,62 @@ function waterPlant(plant){
     }
 }
 
+// Draws different interaction menus
+function drawInteractionMenu(){
+
+    if(menuOpen){
+
+        push();
+
+        fill(255);
+        stroke(0);
+        rect(200, 350, 300, 100);
+
+        noStroke();
+        fill(0);
+        textSize(18);
+        textAlign(CENTER);
+        text("INTERACT", 350, 375);
+
+        textSize(14);
+        text("Press E to close", 350, 420);
+
+        pop();
+
+    }
+
+}
+
+// Allows farmer to interact with different objects
+function interactWith() {
+
+    if (farmer.nearestObject.type === "plot") {
+        console.log("Interacting with a farm!");
+    }
+
+}
+
+function keyPressed() {
+
+    if (key === "e") {
+
+        if (menuOpen === false) {
+
+            if (farmer.nearestObject === null) {
+                console.log("Nothing nearby!");
+            }
+
+            else {
+                menuOpen = true;
+                interactWith();
+            }
+
+        }
+
+        else {
+            menuOpen = false;
+        }
+
+    }
+
+}
