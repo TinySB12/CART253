@@ -36,7 +36,7 @@ let farmer = {
     x: 85,
     y: 85,
     speed: 3,
-    nearestplot: null
+    nearestObject: null
 };
 
 // Money (You start with $500)
@@ -48,6 +48,7 @@ let farm = {
         y: 50,
         w: 150,
         h: 150,
+        type: "plot",
         status: ["unlocked", "notPlanted"],
         crop: null
     },
@@ -57,6 +58,7 @@ let farm = {
         y: 50,
         w: 150,
         h: 150,
+        type: "plot",
         status: ["locked", "notPlanted"],
         crop: null
     },
@@ -66,6 +68,7 @@ let farm = {
         y: 250,
         w: 150,
         h: 150,
+        type: "plot",
         status: ["locked", "notPlanted"],
         crop: null
     },
@@ -75,6 +78,7 @@ let farm = {
         y: 250,
         w: 150,
         h: 150,
+        type: "plot",
         status: ["locked", "notPlanted"],
         crop: null
     },
@@ -117,7 +121,7 @@ function draw() {
     drawFarm();
     moveFarmer();
 
-    farmer.nearestplot = null;
+    farmer.nearestObject = null;
     
 
     checkPlot(farm.plot1);
@@ -215,19 +219,11 @@ function checkPlot(plot){
 
     if(d < 100){
         console.log("Interact distance!");
-        farmer.nearestplot = plot;
+        farmer.nearestObject = plot;
     }
 }
 
-
-// WIP of a function to water the plants later
-function waterPlant(plant){
-
-    if (plant.status.includes("thirsty")) {
-        console.log("DRINK OITER");
-    }
-}
-
+// Moves farmer using the arrow keys
 function moveFarmer(){
     if(keyIsDown(LEFT_ARROW)){
         farmer.x -= farmer.speed;
@@ -242,3 +238,12 @@ function moveFarmer(){
         farmer.y += farmer.speed;
     }
 }
+
+// WIP of a function to water the plants later
+function waterPlant(plant){
+
+    if (plant.status.includes("thirsty")) {
+        console.log("DRINK OITER");
+    }
+}
+
