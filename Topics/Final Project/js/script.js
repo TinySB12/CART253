@@ -52,7 +52,7 @@ let farm = {
         w: 150,
         h: 150,
         type: "plot",
-        status: ["unlocked", "notPlanted"],
+        status: ["unlocked", "empty"],
         crop: null
     },
 
@@ -62,8 +62,9 @@ let farm = {
         w: 150,
         h: 150,
         type: "plot",
-        status: ["locked", "notPlanted"],
-        crop: null
+        status: ["locked", "empty"],
+        crop: null,
+        price: 250
     },
 
     plot3: {
@@ -72,8 +73,9 @@ let farm = {
         w: 150,
         h: 150,
         type: "plot",
-        status: ["locked", "notPlanted"],
-        crop: null
+        status: ["locked", "empty"],
+        crop: null,
+        price: 250
     },
     
     plot4: {
@@ -82,8 +84,9 @@ let farm = {
         w: 150,
         h: 150,
         type: "plot",
-        status: ["locked", "notPlanted"],
-        crop: null
+        status: ["locked", "empty"],
+        crop: null,
+        price: 250
     },
 
     
@@ -264,16 +267,16 @@ function drawInteractionMenu(){
 
         fill(255);
         stroke(0);
-        rect(200, 350, 300, 100);
+        rect(20, 20, 200, 120);
 
         noStroke();
         fill(0);
         textSize(18);
         textAlign(CENTER);
-        text("INTERACT", 350, 375);
+        text("INTERACT", 120, 50);
 
         textSize(14);
-        text("Press E to close", 350, 420);
+        text("Press E to close", 120, 110);
 
         pop();
 
@@ -285,7 +288,15 @@ function drawInteractionMenu(){
 function interactWith() {
 
     if (farmer.nearestObject.type === "plot") {
-        console.log("Interacting with a farm!");
+
+        if (farmer.nearestObject.status.includes("locked")) {
+            console.log("This plot can be purchased!");
+        }
+
+        else if (farmer.nearestObject.status.includes("empty")) {
+            console.log("This plot is empty!");
+        }
+
     }
 
 }
