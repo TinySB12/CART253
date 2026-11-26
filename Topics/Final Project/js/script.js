@@ -64,7 +64,7 @@ let farm = {
         type: "plot",
         status: ["locked", "empty"],
         crop: null,
-        price: 250
+        price: 150
     },
 
     plot3: {
@@ -86,7 +86,7 @@ let farm = {
         type: "plot",
         status: ["locked", "empty"],
         crop: null,
-        price: 250
+        price: 350
     },
 
     
@@ -267,16 +267,33 @@ function drawInteractionMenu(){
 
         fill(255);
         stroke(0);
-        rect(20, 20, 200, 120);
-
+        rect(20, 20, 200, 140);
         noStroke();
         fill(0);
         textSize(18);
         textAlign(CENTER);
         text("INTERACT", 120, 50);
-
         textSize(14);
-        text("Press E to close", 120, 110);
+
+        if (farmer.nearestObject.status.includes("locked")) {
+
+            text("Purchase plot", 120, 85);
+
+            text(
+                "$" + farmer.nearestObject.price + " " + "(Press P)",
+                120,
+                110
+            );
+
+        }
+
+        else if (farmer.nearestObject.status.includes("empty")) {
+
+            text("Empty plot", 120, 85);
+
+        }
+
+        text("Press E to close", 120, 145);
 
         pop();
 
