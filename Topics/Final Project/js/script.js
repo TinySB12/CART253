@@ -33,7 +33,7 @@ let menuOpen = false;
 
 // Inventory that will hold the products
 let inventory = [
-    {type: "seed", crop: "tomato", quantity: 5},
+    {type: "seed", crop: "tomato", quantity: 10},
     {type: "seed", crop: "carrot", quantity: 3},
     {type: "seed", crop: "lettuce", quantity: 4}
 ];
@@ -162,32 +162,36 @@ function draw() {
 
     drawFarmer();
 
+    drawInventory();
+
     drawInteractionMenu();
-
-    // drawing inventory before I move it to its own function
-
-    push();
-    rectMode(CENTER);
-    fill(0);
-    rect(width/2, height - 50, 450, 50, 50);
-
-    // inventory slots?? Sabine this For loop is for you
-
-    for (let i = 0; i < 6; i++) {
-        fill(80);
-        stroke(255);
-        rect(width/2 - 160 + i * 65, height - 50, 55, 40, 10)
-    }
-
-    pop();
-
-
-    
     
 }
 
 // Draw the farmer
 function drawFarmer(){
+
+
+    // Farmer Hat
+
+    push();
+    noStroke();
+    rectMode(CENTER);
+    fill(201, 134, 75);
+    rect(farmer.x, farmer.y - 20, 20, 5);
+    rect(farmer.x, farmer.y - 20, 10, 15);
+    pop();
+
+    // Farmer head
+    push();
+    noStroke();
+    rectMode(CENTER);
+    fill(240, 189, 144);
+    rect(farmer.x, farmer.y - 15, 10);
+    pop();
+
+
+    // Farmer body
     push();
     noStroke();
     rectMode(CENTER);
@@ -258,6 +262,70 @@ function drawMoney(){
     textSize(15);
     textAlign(CENTER, CENTER);
     text("$" + money, width - 60, 25);
+
+    pop();
+
+}
+
+function drawInventory(){
+
+    push();
+    rectMode(CENTER);
+
+    // The black bar
+    fill(0);
+    rect(width/2, height - 50, 450, 50, 50);
+
+    // Inventory slots
+    for (let i = 0; i < 6; i++) {
+
+        fill(80);
+        stroke(255);
+
+        let slotX = width/2 - 160 + i * 65;
+        let slotY = height - 50;
+
+        rect(slotX, slotY, 55, 40, 10);
+
+        // Draw inventory items
+        if (i < inventory.length) {
+
+            let item = inventory[i];
+
+            // The seed bags
+            fill(170, 120, 70);
+            noStroke();
+            rect(slotX, slotY, 25, 25, 4);
+
+            // Different seed types (changes color of the placeholder ellipse on the center)
+            if (item.crop === "tomato") {
+                fill(200, 50, 50);
+            }
+
+            else if (item.crop === "carrot") {
+                fill(255, 140, 0);
+            }
+
+            else if (item.crop === "lettuce") {
+                fill(70, 180, 70);
+            }
+
+            ellipse(slotX, slotY, 12, 12);
+
+            // Quantity
+            push();
+            fill(255);
+            stroke(0);
+            strokeWeight(2);
+            textSize(14);
+            textWeight(600);
+            textAlign(CENTER);
+            text(item.quantity, slotX, slotY + 20);
+            pop();
+
+        }
+
+    }
 
     pop();
 
