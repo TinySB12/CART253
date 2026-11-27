@@ -40,7 +40,7 @@ let inventory = [
 
 // The player's properties
 let farmer = {
-    x: 85,
+    x: 100,
     y: 85,
     speed: 3,
     nearestObject: null
@@ -171,6 +171,16 @@ function draw() {
     fill(0);
     rect(width/2, height - 50, 350, 50, 50);
 
+    // inventory slots?? Sabine this For loop is for you
+
+    for (i = 0; i < 6; i++) {
+
+        fill(60);
+        stroke(255);
+        strokeWeight(2);
+        rect(width/2 + i*50, height - 50, 50, 50);
+    }
+
     pop();
 
 
@@ -182,6 +192,7 @@ function draw() {
 function drawFarmer(){
     push();
     noStroke();
+    rectMode(CENTER);
     fill(0, 0, 200);
     rect(farmer.x, farmer.y, 25);
     pop();
