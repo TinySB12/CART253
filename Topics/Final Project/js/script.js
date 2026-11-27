@@ -172,8 +172,7 @@ function draw() {
 function drawFarmer(){
 
 
-    // Farmer Hat
-
+    // Farmer's Hat!
     push();
     noStroke();
     rectMode(CENTER);
@@ -182,7 +181,7 @@ function drawFarmer(){
     rect(farmer.x, farmer.y - 20, 10, 15);
     pop();
 
-    // Farmer head
+    // Farmer's head!
     push();
     noStroke();
     rectMode(CENTER);
@@ -191,7 +190,7 @@ function drawFarmer(){
     pop();
 
 
-    // Farmer body
+    // Farmer's body
     push();
     noStroke();
     rectMode(CENTER);
@@ -201,7 +200,7 @@ function drawFarmer(){
 
 }
 
-// The farm map. You start here.
+// The farm map. You start here!
 function drawFarm(){
     background("green");
     
@@ -222,6 +221,7 @@ function drawFarm(){
 
 }
 
+// Function to draw the different plots!
 function drawPlot(plot) {
 
     push();
@@ -249,6 +249,7 @@ function drawPlot(plot) {
     pop();
 }
 
+// Function to display your money
 function drawMoney(){
     push();
 
@@ -267,6 +268,7 @@ function drawMoney(){
 
 }
 
+// Function to display your inventory
 function drawInventory(){
 
     push();
@@ -392,7 +394,7 @@ function drawInteractionMenu(){
             text("Purchase plot", 120, 85);
 
             text(
-                "$" + farmer.nearestObject.price + " " + "(Press P)",
+                "$" + farmer.nearestObject.price + " " + "Press P to purchase!",
                 120,
                 110
             );
@@ -402,6 +404,14 @@ function drawInteractionMenu(){
         else if (farmer.nearestObject.status.includes("empty")) {
 
             text("Empty plot", 120, 85);
+
+            text("Press F to plant seeds", 120, 105);
+
+        }
+
+        else if(farmer.nearestObject.status.includes("planted")) {
+
+            text("Planted plot", 120, 85);
 
         }
 
@@ -413,12 +423,50 @@ function drawInteractionMenu(){
 
 }
 
+// function to plant seeds (WIP)
+function plantSeed(plot){
+
+    // Checks if plot is unlocked and empty
+    if(plot.status.includes("unlocked") && plot.status.includes("empty")){
+
+        let seed = inventory.find(item => item.type === "seed");
+
+        if(seed === undefined){
+            console.log("No seeds to plant!");
+        }
+
+        // plants the seed
+        plot.crop = seed.crop;
+
+        // Changes plot status from empty to planted.
+        plot.status[1] = "planted";
+
+        // Removes one seed from seed quantity
+        seed.quantity -= 1;
+
+        // I confess I had to look up how to code this bit. 
+        if(seed.quantity <= 0){
+
+          inventory.splice(inventory.indexOf(seed), 1);
+
+        }
+        
+        console.log("Seed planted!");
+
+
+    }
+}
+
+// Function for purchasing objects
 function purchase(object){
 
+    // Checks if object is plot
     if (object.type === "plot"){
 
+        // Checks if the plot is locked and needs to be purchased
         if (object.status.includes("locked")) {
 
+            // Checks if you have more money than the price or equal amount of money to the price
             if (money >= object.price) {
 
                 money -= object.price;
@@ -428,6 +476,7 @@ function purchase(object){
 
             }
 
+            // Checks if you have less money
             else if (money < object.price) {
 
                 console.log("Not enough money!");
@@ -452,6 +501,10 @@ function interactWith() {
 
         else if (farmer.nearestObject.status.includes("empty")) {
             console.log("This plot is empty!");
+        }
+
+        else if (farmer.nearestObject.status.includes("planted")) {
+            console.log("This plot has been planted!");
         }
 
     }
@@ -494,5 +547,17 @@ function keyPressed() {
         }
 
     }
+
+    // control for planting seed
+    if (key === "f" && menuOpen === true) {
+
+    if (farmer.nearestObject === null) {
+        console.log("No where to plant!")
+
+    } else {
+        plantSeed(farmer.nearestObject);
+    }
+
+}
 
 }
