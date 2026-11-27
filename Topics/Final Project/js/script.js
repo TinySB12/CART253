@@ -317,7 +317,26 @@ function drawInteractionMenu(){
 
 }
 
-// Allows farmer to interact with different objects
+function purchase(object){
+    
+    if (object.type === "plot"){
+
+        if (object.status.includes("locked")) {
+
+            if (money >= object.price) {
+
+                money -= object.price;
+                object.status[0] = "unlocked";
+
+                console.log("Plot purchased!");
+            }
+        }
+    }
+
+}
+        
+
+// Detects what the player is interacting with. Not helping with the game's function atm but its helping me keep track.
 function interactWith() {
 
     if (farmer.nearestObject.type === "plot") {
@@ -336,6 +355,7 @@ function interactWith() {
 
 function keyPressed() {
 
+    // Open and close interaction menu
     if (key === "e") {
 
         if (menuOpen === false) {
@@ -353,6 +373,19 @@ function keyPressed() {
 
         else {
             menuOpen = false;
+        }
+
+    }
+
+    // control for purchasing objects (will adjust later for the market too)
+    if (key === "p" && menuOpen === true) {
+
+        if (farmer.nearestObject === null) {
+            console.log("Nothing to purchase!");
+        }
+
+        else {
+            purchase(farmer.nearestObject);
         }
 
     }
