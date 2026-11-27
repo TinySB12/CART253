@@ -32,7 +32,11 @@ let gameState = "start";
 let menuOpen = false;
 
 // Inventory that will hold the products
-let inventory = [];
+let inventory = [
+    {type: "seed", crop: "tomato", quantity: 5},
+    {type: "seed", crop: "carrot", quantity: 3},
+    {type: "seed", crop: "lettuce", quantity: 4}
+];
 
 // The player's properties
 let farmer = {
@@ -140,6 +144,7 @@ function setup() {
 
 // Draws the game
 function draw() {
+
     drawFarm();
     drawMoney();
 
@@ -158,6 +163,17 @@ function draw() {
     drawFarmer();
 
     drawInteractionMenu();
+
+    // drawing inventory before I move it to its own function
+
+    push();
+    rectMode(CENTER);
+    fill(0);
+    rect(width/2, height - 50, 350, 50, 50);
+
+    pop();
+
+
     
     
 }
@@ -269,13 +285,13 @@ function moveFarmer(){
     }
 }
 
-// WIP of a function to water the plants later
-function waterPlant(plant){
+// // WIP of a function to water the plants later
+// function waterPlant(plant){
 
-    if (plant.status.includes("thirsty")) {
-        console.log("DRINK OITER");
-    }
-}
+//     if (plant.status.includes("thirsty")) {
+//         console.log("DRINK OITER");
+//     }
+// }
 
 // Draws different interaction menus
 function drawInteractionMenu(){
@@ -321,7 +337,7 @@ function drawInteractionMenu(){
 }
 
 function purchase(object){
-    
+
     if (object.type === "plot"){
 
         if (object.status.includes("locked")) {
@@ -332,11 +348,17 @@ function purchase(object){
                 object.status[0] = "unlocked";
 
                 console.log("Plot purchased!");
+
             }
+
+            else if (money < object.price) {
+
+                console.log("Not enough money!");
+
+            }
+
         }
-    } else if (money < object.price){
-        
-        console.log("Not enough money!");
+
     }
 
 }
