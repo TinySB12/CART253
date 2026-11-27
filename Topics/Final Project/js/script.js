@@ -42,9 +42,10 @@ let farmer = {
     nearestObject: null
 };
 
-// Money (You start with $500)
+// The money you start with (You start with $500)
 let money = 500;
 
+// My farm and its plots + their properties
 let farm = {
     plot1: {
         x: 250,
@@ -92,6 +93,7 @@ let farm = {
     
 }
 
+// My market
 let market = {
     x: null,
     y: null,
@@ -99,13 +101,14 @@ let market = {
     items: ["tomato seeds", "carrot seeds", "lettuce seeds"]
 }
 
+// My home
 let home = {
     x: null,
     y: null,
     type: "home"
 }
 
-// My plants
+// My crops
 let crop = {
 
     tomato: {
@@ -130,12 +133,12 @@ let crop = {
     }
 } 
 
+// My setup (haven't had to add anything to it yet)
 function setup() {
     createCanvas(700,500);
-    
-
 }
 
+// Draws the game
 function draw() {
     drawFarm();
     drawMoney();
