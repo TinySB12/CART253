@@ -185,7 +185,6 @@ function drawFarm(){
     drawPlot(farm.plot2);
     drawPlot(farm.plot3);
     drawPlot(farm.plot4);
-    
 
 
 }
@@ -197,6 +196,14 @@ function drawPlot(plot) {
 
     if (plot.status.includes("locked")) {
         fill(65, 45, 35);
+        rect(plot.x, plot.y, plot.w, plot.h);
+
+        push();
+        fill(255);
+        textSize(12);
+        textAlign(CENTER);
+        text("$", plot.x + plot.w/2, plot.y + plot.h/2);
+        pop();
     }
 
     else {
