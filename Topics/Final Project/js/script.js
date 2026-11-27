@@ -92,6 +92,19 @@ let farm = {
     
 }
 
+let market = {
+    x: null,
+    y: null,
+    type: "market",
+    items: ["tomato seeds", "carrot seeds", "lettuce seeds"]
+}
+
+let home = {
+    x: null,
+    y: null,
+    type: "home"
+}
+
 // My plants
 let crop = {
 
@@ -168,55 +181,36 @@ function drawFarm(){
     rect(400, 50, 50, 350);
     pop();
 
-    //plot1
+    drawPlot(farm.plot1);
+    drawPlot(farm.plot2);
+    drawPlot(farm.plot3);
+    drawPlot(farm.plot4);
+    
+
+
+}
+
+function drawPlot(plot) {
+
     push();
     noStroke();
-    fill(112, 77, 58);
+
+    if (plot.status.includes("locked")) {
+        fill(65, 45, 35);
+    }
+
+    else {
+        fill(112, 77, 58);
+    }
+
     rect(
-    farm.plot1.x,
-    farm.plot1.y,
-    farm.plot1.w,
-    farm.plot1.h
+        plot.x,
+        plot.y,
+        plot.w,
+        plot.h
     );
+
     pop();
-
-    //plot2
-    push();
-    noStroke();
-    fill(112, 77, 58);
-    rect(
-    farm.plot2.x,
-    farm.plot2.y,
-    farm.plot2.w,
-    farm.plot2.h
-    );
-    pop();
-
-    //plot3
-    push();
-    noStroke();
-    fill(112, 77, 58);
-    rect(
-    farm.plot3.x,
-    farm.plot3.y,
-    farm.plot3.w,
-    farm.plot3.h
-    );
-    pop();
-
-    //plot4
-    push();
-    noStroke();
-    fill(112, 77, 58);
-    rect(
-    farm.plot4.x,
-    farm.plot4.y,
-    farm.plot4.w,
-    farm.plot4.h
-    );
-    pop();
-
-
 }
 
 // Checks if farmer is close enough to each plot so it can interact with it.
