@@ -138,6 +138,7 @@ function setup() {
 
 function draw() {
     drawFarm();
+    drawMoney();
 
     if (menuOpen === false) {
         moveFarmer();
@@ -214,6 +215,24 @@ function drawPlot(plot) {
     }
 
     pop();
+}
+
+function drawMoney(){
+    push();
+
+    // Black box
+    fill(0);
+    noStroke();
+    rect(width - 100, 10, 80, 30, 50);
+
+    // Text showing the money amount
+    fill(0, 255, 0);
+    textSize(15);
+    textAlign(CENTER, CENTER);
+    text("$" + money, width - 60, 25);
+
+    pop();
+
 }
 
 // Checks if farmer is close enough to each plot so it can interact with it.
