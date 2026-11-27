@@ -169,16 +169,14 @@ function draw() {
     push();
     rectMode(CENTER);
     fill(0);
-    rect(width/2, height - 50, 350, 50, 50);
+    rect(width/2, height - 50, 450, 50, 50);
 
     // inventory slots?? Sabine this For loop is for you
 
-    for (i = 0; i < 6; i++) {
-
-        fill(60);
+    for (let i = 0; i < 6; i++) {
+        fill(80);
         stroke(255);
-        strokeWeight(2);
-        rect(width/2 + i*50, height - 50, 50, 50);
+        rect(width/2 - 160 + i * 65, height - 50, 55, 40, 10)
     }
 
     pop();
