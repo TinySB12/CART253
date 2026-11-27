@@ -334,6 +334,9 @@ function purchase(object){
                 console.log("Plot purchased!");
             }
         }
+    } else if (money < object.price){
+        
+        console.log("Not enough money!");
     }
 
 }
